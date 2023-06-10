@@ -1,27 +1,26 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo-1.png'
-// import { useContext } from 'react';
-// import { AuthContext } from '../../../Providers/AuthProviders';
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
+import { AuthContext } from '../../../Providers/AuthProviders';
 import Swal from 'sweetalert2';
+import { useContext } from 'react';
 
 
 
 const Navbar = () => {
-    const user=true;
-    // const { user, logout } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     const handleLogout = () => {
-        // logout()
-        //     .then(() => {
-        //         Swal.fire({
-        //             icon: 'success',
-        //             title: 'Success',
-        //             text: 'Logout Successfully',
-        //         })
-        //     })
-        //     .catch(() => {
-        //     })
+        logout()
+            .then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Logout Successfully',
+                })
+            })
+            .catch(() => {
+            })
     }
 
 
