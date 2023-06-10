@@ -2,11 +2,13 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
-import login from '../../../../public/login.json'
-import { useContext, useState } from "react";
+import login from '/public/login.json'
+import { useContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2';
 import { AuthContext } from "../../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -15,8 +17,30 @@ const Login = () => {
     const { googleLogin, signIn, githubLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-
     const from = location.state?.from?.pathname || '/';
+    const [disabled, setDisabled] = useState(true);
+
+    // captcha
+
+
+    useEffect(() => {
+        loadCaptchaEnginge(6);
+    }, [])
+
+
+    const handleValidateCaptcha = event => {
+        const user_captcha_value = event.target.value;
+        if (validateCaptcha(user_captcha_value)) {
+            setDisabled(false)
+        }
+
+        else {
+            setDisabled(true)
+        }
+    }
+
+
+
     // github login
     const handleGithubLogin = () => {
         githubLogin()
@@ -68,6 +92,8 @@ const Login = () => {
 
 
 
+
+
     return (
         <div className="hero min-h-screen bg-gray-100 py-10">
             <div className="hero-content w-full flex-col lg:flex-row">
@@ -92,10 +118,10 @@ const Login = () => {
                     <form onSubmit={handleSubmit(onsubmit)} className="card-body ">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Name*</span>
+                                <span className="label-text">Email*</span>
                             </label>
-                            <input type="text" placeholder="Your Name" className="input input-bordered" {...register("name", { required: true })} />
-                            {errors.name && <span className="text-red-600 text-sm">name is required</span>}
+                            <input type="email" placeholder="Your Email" className="input input-bordered" {...register("email", { required: true })} />
+                            {errors.email && <span className="text-red-600 text-sm">email is required</span>}
                         </div>
                         {/* password */}
                         <div className="form-control ">
@@ -115,6 +141,12 @@ const Login = () => {
                             {errors.password?.type === 'required' && <p role="alert" className="text-red-600 text-sm">password is required</p>}
                         </div>
 
+                        <div className="label flex justify-evenly gap-2">
+                            <LoadCanvasTemplate />
+                            <input type="text" onMouseLeave={handleValidateCaptcha} placeholder="type the captcha" className="input input-bordered" name="captcha" />
+
+
+                        </div>
                         <div className="label justify-start gap-2">
                             <input type="checkbox" className="checkbox " />
                             <span className="label-text-alt">Remember me</span>
@@ -124,8 +156,9 @@ const Login = () => {
                             <p className="">New User? <Link to={'/register'}><span className="hover:text-blue-600 hover:underline">Register here</span></Link></p>
                         </label>
                         <div className="form-control">
-                            <input type="submit" className="btn btn-primary" value="Sign In" />
+                            <input type="submit" disabled={disabled} className="btn btn-primary" value="Sign In" />
                         </div>
+
                         <div className="text-center">
                             <p className="text-red-600">{error}</p>
                         </div>
