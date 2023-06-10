@@ -58,7 +58,7 @@ const Registration = () => {
 
                 <div className="card w-full lg:w-1/2 py-10 shadow-xl bg-white">
                     <h1 className="text-3xl  ms-10 font-bold text-blue-600">Create Account</h1>
-                    <p className="ms-10  text-green-600 text-sm">Let's go fill Up the form and enjoy our service,HurryUp!</p>
+                    <p className="ms-10  text-green-900 text-sm">Let's go fill Up the form and enjoy our service,HurryUp!</p>
                     {/* form start */}
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
                         <div className="form-control">
