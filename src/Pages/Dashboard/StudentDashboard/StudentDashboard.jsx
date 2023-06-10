@@ -2,7 +2,7 @@
 const StudentDashboard = () => {
     return (
         <div>
-            Student  Dashboard
+            fhf dfjklhdfkj hi hdafhkfh student
         </div>
     );
 };

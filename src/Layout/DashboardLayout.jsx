@@ -1,7 +1,6 @@
-import {NavLink, Outlet } from 'react-router-dom';
-
+import { NavLink, Outlet } from 'react-router-dom';
+import logo from '../assets/logo-1.png'
 const DashboardLayout = () => {
-    const student = true;
     const admin = false;
     const instructor = false;
     return (
@@ -16,30 +15,30 @@ const DashboardLayout = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
-
+                    <div className='flex flex-col items-center mb-5'>
+                        <img src={logo} alt="logo" className='w-16 md:w-20' />
+                        <h2 className='text-2xl md:text-3xl font-bold'>Global Tongues</h2>
+                    </div>
                     {/* admin */}
                     {admin && <>
                         <li className='hover:text-orange-600'><NavLink to={'/dashboard/admin'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
                             Admin Home</NavLink></li>
                         <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
                         <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
-                    </>}
+                    </>
+                        || instructor && <>
+                            <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
+                                Instructor Home</NavLink></li>
+                            <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
+                            <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
+                        </>
 
-                    {/* instructor */}
-                    {instructor && <>
-                        <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
-                            Instructor Home</NavLink></li>
-                        <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
-                        <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
-                    </>}
-
-                    {/* student */}
-                    {student && <>
-                        <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
-                            Student Home</NavLink></li>
-                        <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
-                        <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
-                    </>}
+                        ||  <>
+                            <li className='hover:text-orange-600'><NavLink to={'/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
+                                Student Home</NavLink></li>
+                            <li className='hover:text-orange-600'><NavLink to={'dashboard/studentSection'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
+                            <li className='hover:text-orange-600'><NavLink to={'dashboard/studentSection'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
+                        </>}
 
                     <div className='divider'></div>
 
@@ -49,7 +48,7 @@ const DashboardLayout = () => {
                 </ul>
 
             </div>
-        </div>
+        </div >
     );
 };
 

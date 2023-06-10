@@ -10,6 +10,8 @@ import { useContext } from 'react';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
+    const admin = false;
+    const instructor = false;
     const handleLogout = () => {
         logout()
             .then(() => {
@@ -30,12 +32,11 @@ const Navbar = () => {
         <li className='hover:text-orange-600'><NavLink to={'/allClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Classes</NavLink></li>
         {
             user && <>
-                <li className='hover:text-orange-600'><NavLink to={'/dashboard'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Dashboard </NavLink></li>
-            
+                <li className='hover:text-orange-600'><NavLink to={admin && '/dashboard/admin' || instructor && '/dashboard/instructor' || '/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Dashboard </NavLink></li>
             </>
 
         }
-   
+
     </>
 
     return (
@@ -51,7 +52,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex'>
                     <img src={logo} alt="logo" className='w-16 md:w-20' />
-                    <h2 className='text-2xl md:text-4xl font-bold'>Gobal Tongues</h2>
+                    <h2 className='text-2xl md:text-4xl font-bold'>Global Tongues</h2>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
