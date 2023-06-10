@@ -26,11 +26,11 @@ const Navbar = () => {
 
     const menu = <>
         <li className='hover:text-Orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
-        <li className='hover:text-orange-600'><NavLink to={'/allToys'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Instructors</NavLink></li>
-        <li className='hover:text-orange-600'><NavLink to={'/allToys'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Classes</NavLink></li>
+        <li className='hover:text-orange-600'><NavLink to={'/allInstructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Instructors</NavLink></li>
+        <li className='hover:text-orange-600'><NavLink to={'/allClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Classes</NavLink></li>
         {
             user && <>
-                <li className='hover:text-orange-600'><NavLink to={'/addAToy'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Dashboard </NavLink></li>
+                <li className='hover:text-orange-600'><NavLink to={'/dashboard'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Dashboard </NavLink></li>
             
             </>
 
