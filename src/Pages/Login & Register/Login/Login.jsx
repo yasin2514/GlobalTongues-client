@@ -1,5 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import login from '/public/login.json'
@@ -14,7 +14,7 @@ const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [error, setError] = useState(null);
     const [show, setShow] = useState(false);
-    const { googleLogin, signIn, githubLogin } = useContext(AuthContext);
+    const { googleLogin, signIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
@@ -39,25 +39,6 @@ const Login = () => {
         }
     }
 
-
-
-    // github login
-    const handleGithubLogin = () => {
-        githubLogin()
-            .then((result) => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: 'User Login Successfully',
-                })
-                navigate(from, { relative: true });
-                setError('');
-                console.log(result.user)
-            })
-            .catch(error => {
-                setError(error.message);
-            })
-    }
 
     // google login
     const handleGoogleLogin = () => {
@@ -110,7 +91,6 @@ const Login = () => {
 
                     <div className="text-center mt-10 space-x-10">
                         <button onClick={handleGoogleLogin} className="btn btn-outline"><FcGoogle className="text-3xl"></FcGoogle></button>
-                        <button onClick={handleGithubLogin} className="btn btn-outline"><FaGithub className="text-3xl"></FaGithub></button>
                     </div>
                     <div className="divider mx-32 mt-10 font-bold"> OR  continue With</div>
 

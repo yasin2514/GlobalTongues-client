@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import login from '/public/signIn.json'
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Providers/AuthProviders";
-import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+
 
 
 const Registration = () => {
@@ -16,34 +16,31 @@ const Registration = () => {
     const [active, setActive] = useState(false);
     const [show, setShow] = useState(false);
     const [showTwo, setShowTwo] = useState(false);
-    const { createUser, } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
     const onSubmit = data => {
         console.log(data);
         createUser(data.email, data.password)
-            .then(result => {
-                const loggedUser = result.user;
-                updateUserInfo(loggedUser, data.name, data.photoUrl);
-                Swal.fire({
-                    icon: 'success',
-                    title: 'User created Successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                reset();
+            .then(() => {
+                updateUserProfile(data.name, data.photoUrl)
+                    .then(() => {
+                        reset();
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'User Updated & Created Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        navigate('/')
+                    })
+                    .catch(error => setError(error.message))
             })
-            .catch(error => setError(error.message))
+            .catch(error => {
+                setError(error.message)
+            })
     };
-
-    const updateUserInfo = (user, displayName, photoURL) => {
-        updateProfile(user, {
-            displayName,
-            photoURL
-        })
-    }
-
-
     return (
         <div className="hero min-h-screen bg-gray-100 py-10">
             {/* <PageTitle title="Register" /> */}

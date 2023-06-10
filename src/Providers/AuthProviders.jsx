@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/firebase.config";
-
+import axios from "axios";
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
-const githubProvider = new GithubAuthProvider();
 
 const AuthProviders = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -17,11 +16,7 @@ const AuthProviders = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
-    // github login
-    const githubLogin = () => {
-        setLoading(true);
-        return signInWithPopup(auth, githubProvider);
-    }
+
     // create user using email & password
     const createUser = (email, password) => {
         setLoading(false);
@@ -39,10 +34,39 @@ const AuthProviders = ({ children }) => {
         return signOut(auth);
 
     }
+
+    // update user profile
+
+    const updateUserProfile = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo
+        })
+    }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
-            setLoading(false)
+            const saveUser = {
+                name: currentUser?.displayName,
+                email: currentUser?.email,
+                photo: currentUser?.photoURL
+            }
+            if (currentUser) {
+                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                    .then(data => {
+                        localStorage.setItem("access-token", data.data.token)
+                        setLoading(false);
+                    })
+
+            }
+            else {
+                localStorage.removeItem("access-token")
+            }
+            if (currentUser) {
+                axios.post('http://localhost:5000/users', saveUser)
+                    .then(() => {
+                    })
+            }
 
         });
         return () => unSubscribe();
@@ -51,11 +75,11 @@ const AuthProviders = ({ children }) => {
     const authInfo = {
         user,
         googleLogin,
-        githubLogin,
         loading,
         createUser,
         signIn,
         logout,
+        updateUserProfile
     }
     return (
         <AuthContext.Provider value={authInfo}>
