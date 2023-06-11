@@ -21,6 +21,7 @@ import InstructorClasses from "../Pages/Dashboard/InstructorDashboard/Instructor
 import AddClasses from "../Pages/Dashboard/InstructorDashboard/AddClasses";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import StudentRoute from "./StudentRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -60,19 +61,19 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'student',
-                element: <PrivateRoute><StudentDashboard></StudentDashboard></PrivateRoute>
+                element: <PrivateRoute><StudentRoute><StudentDashboard></StudentDashboard></StudentRoute></PrivateRoute>
             },
             {
                 path: 'myClassStudent',
-                element: <PrivateRoute><MyClasses></MyClasses></PrivateRoute>
+                element: <PrivateRoute><StudentRoute><MyClasses></MyClasses></StudentRoute></PrivateRoute>
             },
             {
                 path: 'enrolledClass',
-                element: <PrivateRoute><EnrolledClasses></EnrolledClasses></PrivateRoute>
+                element: <PrivateRoute><StudentRoute><EnrolledClasses></EnrolledClasses></StudentRoute></PrivateRoute>
             },
             {
                 path: 'paymentHistory',
-                element: <PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
+                element: <PrivateRoute><StudentRoute><PaymentHistory></PaymentHistory></StudentRoute></PrivateRoute>
             },
             {
                 path: 'admin',
