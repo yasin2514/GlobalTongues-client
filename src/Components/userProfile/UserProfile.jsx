@@ -15,14 +15,17 @@ const UserProfile = () => {
                         <img src={user.photoURL} />
                     </div>
                 </div>
-                <div className="text-2xl mt-5 space-y-3 ">
-                    <p className="text-orange-600 font-bold">Name: <span className="text-orange-500 font-semibold">{user.displayName}</span></p>
-                    <p className="text-blue-600 text-xl">Email: {user.email}</p>
+                <div className="text-xl mt-5 space-y-3 w-1/2 pr-10">
+                    <p className=" font-bold">Name: <span className="font-semibold">{user.displayName}</span></p>
+                    <p className=" text-xl">Email: {user.email}</p>
+                    <p className=""><span className="text-xl text-orange-600">{user.displayName}</span> have curious mind yearning for knowledge and boundless creativity. Embracing challenges, seeking growth, and embracing every moment's beauty. Avid traveler, soaking in diverse cultures, unraveling stories of faraway lands. Inspiring others to dream big, while savoring the small joys of life. Embracing the world's tapestry, one adventure at a time.</p>
                 </div>
             </div>
-            <p className="p-10"><span className="text-xl text-orange-600">{user.displayName}</span> have curious mind yearning for knowledge and boundless creativity. Embracing challenges, seeking growth, and embracing every moment's beauty. Avid traveler, soaking in diverse cultures, unraveling stories of faraway lands. Inspiring others to dream big, while savoring the small joys of life. Embracing the world's tapestry, one adventure at a time.</p>
-            <p className="text-green-600 italic text-center">---Stay Connect With Us---</p>
-            <p className="text-center text-orange-600">Team <p className="text-3xl font-bold text-blue-600">Global Tongues</p></p>
+
+            <div className="mt-20">
+                <p className="text-green-600 italic text-center">---Stay Connect With Us---</p>
+                <p className="text-center text-orange-600">Team <p className="text-3xl font-bold text-blue-600">Global Tongues</p></p>
+            </div>
         </ >
     );
 };
