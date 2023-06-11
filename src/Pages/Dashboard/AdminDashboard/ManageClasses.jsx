@@ -3,7 +3,6 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { useRef } from "react";
 
 const ManageClasses = () => {
@@ -19,7 +18,6 @@ const ManageClasses = () => {
     const handleApprove = course => {
         axios.patch(`http://localhost:5000/classes/approve/${course._id}`, { status: 'approve' })
             .then(res => {
-                console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
@@ -35,7 +33,6 @@ const ManageClasses = () => {
     const handleDeny = course => {
         axios.patch(`http://localhost:5000/classes/deny/${course._id}`, { status: 'deny' })
             .then(res => {
-                console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
@@ -52,9 +49,20 @@ const ManageClasses = () => {
         const findCourse = classes.find(course => course._id == id);
         setModalData(findCourse)
     }
-    const handleFeedback = () => {
+    const handleFeedback = (id) => {
         const feedback = feedbackRef.current.value;
-        console.log(feedback);
+        axios.patch(`http://localhost:5000/classes/${id}`, { feedback })
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        icon: 'success',
+                        title: "Feedback Submitted",
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
     return (
         <div className="w-full">
@@ -98,7 +106,9 @@ const ManageClasses = () => {
                                 <td >{course.status}</td>
                                 <td className=" space-x-2">
                                     <button onClick={() => handleApprove(course)} className="btn btn-sm btn-outline btn-primary text-[10px]" disabled={(course.status === 'approve' ? true : false) || (course.status === 'deny' ? true : false)}>Approved</button>
+
                                     <button onClick={() => handleDeny(course)} className="btn btn-sm btn-outline btn-primary text-[10px]" disabled={(course.status === 'approve' ? true : false) || (course.status === 'deny' ? true : false)}>Deny</button>
+
                                     <button className="btn btn-sm btn-outline btn-primary text-[10px]" onClick={() => {
                                         window.my_modal_1.showModal()
                                         handleModal(course._id)
@@ -117,11 +127,11 @@ const ManageClasses = () => {
                             <textarea className="textarea textarea-primary" required ref={feedbackRef} placeholder="Write here your feedback" ></textarea>
                         </div>
                         <div className="modal-action">
-                            <button onClick={handleFeedback} className="btn btn-sm">Submit</button>
+                            <button onClick={() => handleFeedback(modalData._id)} className="btn btn-sm">Submit</button>
                         </div>
                     </form>
                 </dialog>
-                
+
             </div>
         </div>
     );
