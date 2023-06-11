@@ -79,8 +79,9 @@ const Login = () => {
             .then(() => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Success',
-                    text: 'Login Successfully',
+                    title: 'Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
                 })
                 navigate(from, { relative: true });
                 reset();
@@ -152,8 +153,9 @@ const Login = () => {
                         <label className="label">
                             <p className="">New User? <Link to={'/register'}><span className="hover:text-blue-600 hover:underline">Register here</span></Link></p>
                         </label>
+                        {/* TODO:button disabled */}
                         <div className="form-control">
-                            <input type="submit" disabled={disabled} className="btn btn-primary" value="Sign In" />
+                            <input type="submit" disabled={false} className="btn btn-primary" value="Sign In" />
                         </div>
 
                         <div className="text-center">
