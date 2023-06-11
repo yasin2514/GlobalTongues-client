@@ -11,7 +11,7 @@ import { useContext } from 'react';
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const admin = false;
-    const instructor = false;
+    const instructor = true;
     const handleLogout = () => {
         logout()
             .then(() => {
