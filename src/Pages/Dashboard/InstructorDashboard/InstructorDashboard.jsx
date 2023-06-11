@@ -1,8 +1,9 @@
+import UserProfile from "../../../Components/userProfile/UserProfile";
 
 const InstructorDashboard = () => {
     return (
         <div>
-            Instructor Dashboard
+            <UserProfile></UserProfile>
         </div>
     );
 };

@@ -1,9 +1,10 @@
+import UserProfile from "../../../Components/userProfile/UserProfile";
 
 const AdminDashboard = () => {
     return (
-        <div>
-            Admin dashboard .........................
-        </div>
+        <>
+           <UserProfile></UserProfile>
+        </>
     );
 };
 

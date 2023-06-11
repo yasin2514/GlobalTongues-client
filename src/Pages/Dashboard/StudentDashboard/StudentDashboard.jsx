@@ -1,9 +1,10 @@
+import UserProfile from "../../../Components/userProfile/UserProfile";
 
 const StudentDashboard = () => {
     return (
-        <div>
-            fhf dfjklhdfkj hi hdafhkfh student
-        </div>
+        <>
+            <UserProfile></UserProfile>
+        </>
     );
 };
 
