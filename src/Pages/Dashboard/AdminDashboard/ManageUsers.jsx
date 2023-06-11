@@ -71,14 +71,14 @@ const ManageUsers = () => {
     }
     return (
         <div className="w-full">
-            <div className="uppercase font-semibold h-[60px] items-center text-3xl flex justify-evenly">
-                <h3 >Total Users: {users.length}</h3>
+            <div className="uppercase font-semibold mb-10 items-center text-3xl flex justify-evenly">
+                <h3 >Total Users: {users?.length}</h3>
             </div>
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-[14px] text-blue-600">
                             <th>#</th>
                             <th>Photo</th>
                             <th>Name</th>
@@ -105,9 +105,9 @@ const ManageUsers = () => {
                                 <td>{user.email}</td>
                                 <td >{user.role}</td>
                                 <td className="space-x-2 text-sm">
-                                    <button onClick={() => handleMakeAdmin(user)} disabled={(user.role === 'admin' ? true : false) || (user.role === 'superAdmin' ? true : false)} className="btn btn-sm btn-outline btn-primary">Make Admin</button>
+                                    <button onClick={() => handleMakeAdmin(user)} disabled={(user.role === 'admin' ? true : false) || (user.role === 'superAdmin' ? true : false)} className="btn btn-sm btn-outline btn-primary text-[12px]">Make Admin</button>
 
-                                    <button onClick={() => handleMakeInstructor(user)} disabled={(user.role === 'instructor' ? true : false) || (user.role === 'admin' ? true : false) || (user.role === 'superAdmin' ? true : false)} className="btn btn-sm btn-outline btn-primary">Make Instructor</button>
+                                    <button onClick={() => handleMakeInstructor(user)} disabled={(user.role === 'instructor' ? true : false) || (user.role === 'admin' ? true : false) || (user.role === 'superAdmin' ? true : false)} className="btn btn-sm btn-outline btn-primary text-[12px]">Make Instructor</button>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteUser(user)} disabled={user.role ==='admin' ? true : false} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
