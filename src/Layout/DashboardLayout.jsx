@@ -1,9 +1,11 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 import Footer from '../Pages/Shared/Footer/Footer';
+import useAdmin from '../Hooks/useAdmin'
+import useInstructor from '../Hooks/useInstructor'
 const DashboardLayout = () => {
-    const admin = true;
-    const instructor = false;
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     return (
         <>
             <Navbar></Navbar>
@@ -19,13 +21,13 @@ const DashboardLayout = () => {
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
 
                         {/* admin */}
-                        {admin && <>
+                        {isAdmin && <>
                             <li className='hover:text-orange-600'><NavLink to={'/dashboard/admin'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
                                 Admin Home</NavLink></li>
                             <li className='hover:text-orange-600'><NavLink to={'/dashboard/manageUsers'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Manage Users</NavLink></li>
                             <li className='hover:text-orange-600'><NavLink to={'/dashboard/manageClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Manage Classes</NavLink></li>
                         </>
-                            || instructor && <>
+                            || isInstructor && <>
                                 <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
                                     Instructor Home</NavLink></li>
                                 <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructorClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>My Classes</NavLink></li>

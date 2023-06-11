@@ -110,7 +110,7 @@ const ManageUsers = () => {
                                     <button onClick={() => handleMakeInstructor(user)} disabled={(user.role === 'instructor' ? true : false) || (user.role === 'admin' ? true : false) || (user.role === 'superAdmin' ? true : false)} className="btn btn-sm btn-outline btn-primary">Make Instructor</button>
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDeleteUser(user)} disabled={user.role ==='superAdmin' ? true : false} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDeleteUser(user)} disabled={user.role ==='admin' ? true : false} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                             </tr>
                         ))}
