@@ -2,8 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useRef } from "react";
 
 const ManageClasses = () => {
+    const [modalData, setModalData] = useState();
+    const feedbackRef = useRef();
     const [axiosSecure] = useAxiosSecure();
     const { data: classes = [], refetch } = useQuery(['classes'], async () => {
         const res = await axiosSecure.get('/classes');
@@ -41,6 +46,15 @@ const ManageClasses = () => {
                     })
                 }
             })
+    }
+
+    const handleModal = id => {
+        const findCourse = classes.find(course => course._id == id);
+        setModalData(findCourse)
+    }
+    const handleFeedback = () => {
+        const feedback = feedbackRef.current.value;
+        console.log(feedback);
     }
     return (
         <div className="w-full">
@@ -85,14 +99,29 @@ const ManageClasses = () => {
                                 <td className=" space-x-2">
                                     <button onClick={() => handleApprove(course)} className="btn btn-sm btn-outline btn-primary text-[10px]" disabled={(course.status === 'approve' ? true : false) || (course.status === 'deny' ? true : false)}>Approved</button>
                                     <button onClick={() => handleDeny(course)} className="btn btn-sm btn-outline btn-primary text-[10px]" disabled={(course.status === 'approve' ? true : false) || (course.status === 'deny' ? true : false)}>Deny</button>
-                                    <button className="btn btn-sm btn-outline btn-primary text-[10px]">Feedback</button>
+                                    <button className="btn btn-sm btn-outline btn-primary text-[10px]" onClick={() => {
+                                        window.my_modal_1.showModal()
+                                        handleModal(course._id)
+                                    }}>Feedback</button>
                                 </td>
-
                             </tr>
                         ))}
 
                     </tbody>
                 </table>
+                {/* Modal box */}
+                <dialog id="my_modal_1" className="modal">
+                    <form method="dialog" className="modal-box ">
+                        <h3 className="font-bold text-lg ">Why <span className="text-blue-600">{modalData?.status}</span> {modalData?.className} ?</h3>
+                        <div className="form-control mb-5 mt-2">
+                            <textarea className="textarea textarea-primary" required ref={feedbackRef} placeholder="Write here your feedback" ></textarea>
+                        </div>
+                        <div className="modal-action">
+                            <button onClick={handleFeedback} className="btn btn-sm">Submit</button>
+                        </div>
+                    </form>
+                </dialog>
+                
             </div>
         </div>
     );
