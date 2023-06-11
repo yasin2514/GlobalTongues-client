@@ -19,6 +19,8 @@ import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageClasses from "../Pages/Dashboard/AdminDashboard/ManageClasses";
 import InstructorClasses from "../Pages/Dashboard/InstructorDashboard/InstructorClasses";
 import AddClasses from "../Pages/Dashboard/InstructorDashboard/AddClasses";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -61,44 +63,44 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><StudentDashboard></StudentDashboard></PrivateRoute>
             },
             {
-                path:'myClassStudent',
-                element:<PrivateRoute><MyClasses></MyClasses></PrivateRoute>
+                path: 'myClassStudent',
+                element: <PrivateRoute><MyClasses></MyClasses></PrivateRoute>
             },
             {
-                path:'enrolledClass',
-                element:<PrivateRoute><EnrolledClasses></EnrolledClasses></PrivateRoute>
+                path: 'enrolledClass',
+                element: <PrivateRoute><EnrolledClasses></EnrolledClasses></PrivateRoute>
             },
             {
-                path:'paymentHistory',
-                element:<PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
+                path: 'paymentHistory',
+                element: <PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
             },
             {
                 path: 'admin',
-                element: <PrivateRoute><AdminDashboard></AdminDashboard></PrivateRoute>
+                element: <PrivateRoute><AdminRoute><AdminDashboard></AdminDashboard></AdminRoute></PrivateRoute>
             },
             {
-                path:'manageUsers',
-                element:<PrivateRoute><ManageUsers></ManageUsers> </PrivateRoute>
+                path: 'manageUsers',
+                element: <PrivateRoute><AdminRoute><ManageUsers></ManageUsers></AdminRoute> </PrivateRoute>
             },
             {
-                path:'manageClasses',
-                element:<PrivateRoute><ManageClasses></ManageClasses></PrivateRoute>
+                path: 'manageClasses',
+                element: <PrivateRoute><AdminRoute><ManageClasses></ManageClasses></AdminRoute></PrivateRoute>
             },
             {
                 path: 'instructor',
-                element: <PrivateRoute><InstructorDashboard></InstructorDashboard></PrivateRoute>
+                element: <PrivateRoute><InstructorRoute><InstructorDashboard></InstructorDashboard></InstructorRoute></PrivateRoute>
             },
             {
-                path:'instructorClasses',
-                element:<PrivateRoute><InstructorClasses></InstructorClasses></PrivateRoute>
+                path: 'instructorClasses',
+                element: <PrivateRoute><InstructorRoute><InstructorClasses></InstructorClasses></InstructorRoute></PrivateRoute>
             },
             {
-                path:'addClasses',
-                element:<PrivateRoute><AddClasses></AddClasses></PrivateRoute>
+                path: 'addClasses',
+                element: <PrivateRoute><InstructorRoute><AddClasses></AddClasses></InstructorRoute></PrivateRoute>
             },
             {
-                path:'',
-                element:<PrivateRoute></PrivateRoute>
+                path: '',
+                element: <PrivateRoute></PrivateRoute>
             },
 
         ],
