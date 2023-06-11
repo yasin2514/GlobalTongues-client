@@ -2,8 +2,8 @@ import { NavLink, Outlet } from 'react-router-dom';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 import Footer from '../Pages/Shared/Footer/Footer';
 const DashboardLayout = () => {
-    const admin = false;
-    const instructor = true;
+    const admin = true;
+    const instructor = false;
     return (
         <>
             <Navbar></Navbar>

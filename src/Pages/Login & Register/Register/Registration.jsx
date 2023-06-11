@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 
 
@@ -26,21 +27,34 @@ const Registration = () => {
             .then(() => {
                 updateUserProfile(data.name, data.photoUrl)
                     .then(() => {
-                        reset();
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'User Updated & Created Successfully',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        navigate('/')
+                        const saveUser = {
+                            name: data?.name,
+                            email: data?.email,
+                            photo: data?.photoUrl,
+                            role: 'student'
+                        }
+                        axios.post('http://localhost:5000/users', saveUser)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'User Created Successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate('/')
+                                }
+
+                            })
+
                     })
-                    .catch(error => setError(error.message))
+                    .catch(error => {
+                        setError(error.message)
+                    })
             })
-            .catch(error => {
-                setError(error.message)
-            })
-    };
+    }
+
     return (
         <div className="hero min-h-screen bg-gray-100 py-10">
             {/* <PageTitle title="Register" /> */}

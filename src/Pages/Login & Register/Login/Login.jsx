@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from "../../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import axios from "axios";
 
 
 const Login = () => {
@@ -43,19 +44,35 @@ const Login = () => {
     // google login
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(() => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: 'User Login Successfully',
-                })
-                navigate(from, { relative: true });
-                setError('');
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                const saveUser = {
+                    email: loggedUser.email,
+                    name: loggedUser.displayName,
+                    photo: loggedUser?.photoURL,
+                    role: 'student'
+                }
+                axios.post('http://localhost:5000/users', saveUser)
+                    .then(res => {
+                        navigate(from, { relative: true });
+                        if (res.data.insertedId) {
+                            reset();
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Login Successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+
+                    })
             })
             .catch(error => {
-                setError(error.message);
+                alert(error.message)
             })
     }
+
     const onsubmit = data => {
         setError(null);
         signIn(data.email, data.password)
@@ -63,7 +80,7 @@ const Login = () => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
-                    text: 'User Login Successfully',
+                    text: 'Login Successfully',
                 })
                 navigate(from, { relative: true });
                 reset();
