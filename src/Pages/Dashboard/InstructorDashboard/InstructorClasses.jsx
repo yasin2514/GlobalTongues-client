@@ -6,15 +6,12 @@ import { AuthContext } from "../../../Providers/AuthProviders";
 const InstructorClasses = () => {
     const { user } = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
-    const { data: classes = [] } = useQuery(['email'], async () => {
-        const res = await axiosSecure.get(`/classes/myClasses/${user?.email}`)
+    const { data: classes} = useQuery(['instructorClass'], async () => {
+        const res = await axiosSecure.get(`/classes/${user?.email}`)
         return res.data;
     })
     return (
         <div className="w-full">
-            <div className="uppercase font-semibold mb-10 items-center text-3xl flex justify-evenly">
-                <h3 >Total Classes: {classes?.length}</h3>
-            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}

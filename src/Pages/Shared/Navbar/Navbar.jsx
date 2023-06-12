@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { useContext } from 'react';
 import useAdmin from '../../../Hooks/useAdmin';
 import useInstructor from '../../../Hooks/useInstructor';
+import useStudent from '../../../Hooks/useStudent';
 
 
 
@@ -14,6 +15,8 @@ const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
+    const [isStudent] = useStudent();
+
     const handleLogout = () => {
         logout()
             .then(() => {
@@ -34,7 +37,7 @@ const Navbar = () => {
         <li className='hover:text-orange-600'><NavLink to={'/allClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Classes</NavLink></li>
         {
             user && <>
-                <li className='hover:text-orange-600'><NavLink to={isAdmin && '/dashboard/admin' || isInstructor && '/dashboard/instructor' || '/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Dashboard </NavLink></li>
+                <li className='hover:text-orange-600'><NavLink to={isAdmin && '/dashboard/admin' || isInstructor && '/dashboard/instructor' || isStudent && '/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Dashboard </NavLink></li>
             </>
 
         }

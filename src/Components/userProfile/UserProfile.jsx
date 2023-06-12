@@ -15,10 +15,10 @@ const UserProfile = () => {
                     </div>
                 </div>
                 <div className="text-center mt-10">
-                    <p className=" text-xl">Email: {user.email}</p>
+                    <p className=" text-xl font-bold">Email: {user.email}</p>
                     <p className="px-10"><span className="text-xl text-orange-600">{user.displayName}</span> have curious mind yearning for knowledge and boundless creativity. Embracing challenges, seeking growth, and embracing every moment's beauty. Avid traveler, soaking in diverse cultures, unraveling stories of faraway lands. Inspiring others to dream big, while savoring the small joys of life. Embracing the world's tapestry, one adventure at a time.</p>
-                    <p className="text-[16px] mt-20 text-blue-600">Manage your dashboard & stay connected with Us</p>
-                    <p className="text-green-600 italic">---Stay Connect With Us---</p>
+
+                    <p className="text-green-600 italic mt-16">---Manage your dashboard & stay connected with Us---</p>
                     <p className=" text-orange-600">Team </p>
                     <p className="text-3xl font-bold text-blue-600">Global Tongues</p>
                 </div>

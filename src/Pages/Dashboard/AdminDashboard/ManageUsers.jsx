@@ -68,9 +68,6 @@ const ManageUsers = () => {
     }
     return (
         <div className="w-full">
-            <div className="uppercase font-semibold mb-10 items-center text-3xl flex justify-evenly">
-                <h3 >Total Users: {users?.length}</h3>
-            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}

@@ -4,9 +4,11 @@ import Footer from '../Pages/Shared/Footer/Footer';
 import useAdmin from '../Hooks/useAdmin'
 import useInstructor from '../Hooks/useInstructor'
 import useCart from '../Hooks/useCart';
+import useStudent from '../Hooks/useStudent';
 const DashboardLayout = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
+    const [isStudent] = useStudent();
     const [classes, refetch] = useCart();
     refetch()
     return (
@@ -37,7 +39,7 @@ const DashboardLayout = () => {
                                 <li className='hover:text-orange-600'><NavLink to={'/dashboard/addClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Add a Classes</NavLink></li>
                             </>
 
-                            || <>
+                            || isStudent && <>
                                 <li className='hover:text-orange-600'><NavLink to={'/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
                                     Student Home
                                 </NavLink></li>

@@ -9,7 +9,7 @@ const ManageClasses = () => {
     const [modalData, setModalData] = useState();
     const feedbackRef = useRef();
     const [axiosSecure] = useAxiosSecure();
-    const { data: classes = [], refetch } = useQuery(['classes'], async () => {
+    const { data: classes = [], refetch } = useQuery(['adminManageClass'], async () => {
         const res = await axiosSecure.get('/classes');
         return res.data;
     })
@@ -66,9 +66,6 @@ const ManageClasses = () => {
     }
     return (
         <div className="w-full">
-            <div className="uppercase font-semibold mb-10 items-center text-3xl flex justify-evenly">
-                <h3 >Total Classes: {classes?.length}</h3>
-            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}
