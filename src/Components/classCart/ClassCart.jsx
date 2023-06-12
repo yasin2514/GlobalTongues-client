@@ -14,7 +14,6 @@ const ClassCart = ({ course }) => {
     const [isStudent] = useStudent();
     const { className, price, instructorName, image, availableSeats } = course;
     const navigate = useNavigate();
-    console.log(user)
     const handleClick = course => {
         if (!isStudent) {
             Swal.fire({

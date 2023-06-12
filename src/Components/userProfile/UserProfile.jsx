@@ -6,7 +6,7 @@ const UserProfile = () => {
     return (
         <>
             <div className=" text-center">
-                <h className="text-4xl font-bold">Welcome <span className="text-orange-600">{user.displayName}</span></h>
+                <h3 className="text-4xl font-bold">Welcome <span className="text-orange-600">{user.displayName}</span></h3>
             </div>
             <div className="flex flex-col items-center mt-10">
                 <div className="avatar online">

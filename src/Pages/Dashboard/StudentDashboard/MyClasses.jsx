@@ -2,10 +2,10 @@ import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import axios from "axios";
 import useCart from "../../../Hooks/useCart";
+import { Link } from "react-router-dom";
 
 const MyClasses = () => {
   const [classes,refetch]=useCart();
-  console.log(classes);
     // delete class
     const handleDeleteClass = course => {
         Swal.fire({
@@ -46,6 +46,7 @@ const MyClasses = () => {
                             <th>Class Name</th>
                             <th>Instructor Name</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th>Make Payment</th>
                             <th>Action</th>
                         </tr>
@@ -66,8 +67,9 @@ const MyClasses = () => {
                                 <td>{course.className}</td>
                                 <td >{course.instructorName}</td>
                                 <td >{course.price}</td>
+                                <td >{course?.status || 'Not enrolled'}</td>
                                 <td >
-                                    <button className="btn btn-sm btn-primary btn-outline">pay</button>
+                                    <Link to={`/dashboard/payment/${course._id}`} className="btn btn-sm btn-primary btn-outline">pay</Link>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteClass(course)} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
