@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
+import { Link } from "react-router-dom";
 
 const InstructorClasses = () => {
     const { user } = useContext(AuthContext);
@@ -48,7 +49,7 @@ const InstructorClasses = () => {
                                 <td >{course.totalEnrolled}</td>
                                 <td className="w-2/12">{course.status == 'deny' ? course.feedback.feedback : "no feedback"}</td>
                                 <td>
-                                    <button className="btn btn-sm btn-outline btn-primary">Update</button>
+                                    <Link to={`/dashboard/updateClass/${course._id}`} className="btn btn-sm btn-outline btn-primary">Update</Link>
                                 </td>
                             </tr>
                         ))}

@@ -23,6 +23,8 @@ import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import StudentRoute from "./StudentRoute";
 import Payment from "../Pages/Dashboard/StudentDashboard/Payment/Payment";
+import UpdateClass from "../Pages/Dashboard/InstructorDashboard/UpdateClass";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -75,7 +77,7 @@ const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <PrivateRoute><StudentRoute><Payment></Payment></StudentRoute></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/student/class/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/student/class/${params.id}`)
             },
             {
                 path: 'paymentHistory',
@@ -104,9 +106,14 @@ const router = createBrowserRouter([
             {
                 path: 'addClasses',
                 element: <PrivateRoute><InstructorRoute><AddClasses></AddClasses></InstructorRoute></PrivateRoute>
+            },
+            {
+                path: 'updateClass/:id',
+                element: <PrivateRoute><InstructorRoute><UpdateClass></UpdateClass></InstructorRoute></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/class/${params.id}`)
             }
         ],
-        errorElement: <Error></Error>
+errorElement: <Error></Error>
     },
 
 

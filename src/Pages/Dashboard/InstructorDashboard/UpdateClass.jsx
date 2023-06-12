@@ -1,3 +1,4 @@
+import { useLoaderData } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
@@ -5,7 +6,9 @@ import { useForm } from "react-hook-form";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
-const AddClasses = () => {
+
+const UpdateClass = () => {
+    const course = useLoaderData();
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
@@ -24,23 +27,19 @@ const AddClasses = () => {
             .then(imgResponse => {
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
-                    const addClass = {
-                        instructorName: user.displayName,
-                        instructorEmail: user.email,
-                        className: data.className,
+
+                    const updateClass = {
                         availableSeats: data.availableSeats,
                         price: data.price,
-                        image: imgURL,
-                        status: 'pending',
-                        totalEnrolled: 0
+                        image: imgURL
                     }
-                    axiosSecure.post('/classes', addClass)
+                    axiosSecure.patch(`/updateClass/${course._id}`, updateClass)
                         .then(data => {
-                            if (data.data.insertedId) {
+                            if (data.data.modifiedCount > 0) {
                                 reset();
                                 Swal.fire({
                                     icon: 'success',
-                                    title: 'Class added Successfully',
+                                    title: 'Class Updated Successfully',
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
@@ -55,7 +54,7 @@ const AddClasses = () => {
     };
     return (
         <div>
-            <h3 className="text-3xl text-center font-semibold mb-5">Add a Class</h3>
+            <h3 className="text-3xl text-center font-semibold mb-5">Update {course.className} Class</h3>
 
             {/* form start */}
             <form onSubmit={handleSubmit(onsubmit)} >
@@ -78,17 +77,17 @@ const AddClasses = () => {
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Class name*</span>
+                            <span className="label-text">Class name</span>
                         </label>
-                        <input type="text" placeholder="Class Name" className="input input-bordered" {...register("className", { required: true })} />
-                        {errors.className && <span className="text-red-600 text-sm">Class name is required</span>}
+                        <input type="text" disabled defaultValue={course?.className} className="input input-bordered" />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Available seats*</span>
                         </label>
-                        <input type="number" placeholder="Available seats" className="input input-bordered" {...register("availableSeats", { required: true })} />
+                        <input type="number" placeholder="Available seats"
+                            defaultValue={course?.availableSeats} className="input input-bordered" {...register("availableSeats", { required: true })} />
                         {errors.availableSeats && <span className="text-red-600 text-sm">Available seats is required</span>}
                     </div>
 
@@ -96,7 +95,7 @@ const AddClasses = () => {
                         <label className="label">
                             <span className="label-text">Price*</span>
                         </label>
-                        <input type="number" placeholder="$Price" step='any' className="input input-bordered" {...register("price", { required: true })} />
+                        <input type="number" placeholder="$Price" defaultValue={course?.price} step='any' className="input input-bordered" {...register("price", { required: true })} />
                         {errors.price && <span className="text-red-600 text-sm">Price is required</span>}
 
                     </div>
@@ -113,7 +112,7 @@ const AddClasses = () => {
                 </div>
 
                 <div className="form-control w-1/2 mt-14 mx-auto">
-                    <input type="submit" className="btn btn-primary" value="Add Class" />
+                    <input type="submit" className="btn btn-primary" value="Update Class" />
                 </div>
 
 
@@ -123,4 +122,4 @@ const AddClasses = () => {
     );
 };
 
-export default AddClasses;
+export default UpdateClass;
