@@ -3,9 +3,12 @@ import Navbar from '../Pages/Shared/Navbar/Navbar';
 import Footer from '../Pages/Shared/Footer/Footer';
 import useAdmin from '../Hooks/useAdmin'
 import useInstructor from '../Hooks/useInstructor'
+import useCart from '../Hooks/useCart';
 const DashboardLayout = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
+    const [classes, refetch] = useCart();
+    refetch()
     return (
         <>
             <Navbar></Navbar>
@@ -36,8 +39,11 @@ const DashboardLayout = () => {
 
                             || <>
                                 <li className='hover:text-orange-600'><NavLink to={'/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
-                                    Student Home</NavLink></li>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/myClassStudent'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>My Classes</NavLink></li>
+                                    Student Home
+                                </NavLink></li>
+                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/myClassStudent'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>My Classes
+                                    <span className="badge badge-secondary absolute left-32">+{classes?.length || 0}</span>
+                                </NavLink></li>
                                 <li className='hover:text-orange-600'><NavLink to={'/dashboard/enrolledClass'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>My Enrolled Classes</NavLink></li>
                                 <li className='hover:text-orange-600'><NavLink to={'/dashboard/paymentHistory'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Payment History</NavLink></li>
                             </>}

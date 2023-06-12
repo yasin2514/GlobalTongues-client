@@ -1,19 +1,10 @@
-import { useContext } from "react";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { AuthContext } from "../../../Providers/AuthProviders";
-import { useQuery } from "@tanstack/react-query";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import axios from "axios";
+import useCart from "../../../Hooks/useCart";
 
 const MyClasses = () => {
-    const { user } = useContext(AuthContext);
-    const [axiosSecure] = useAxiosSecure();
-    const { data: classes = [], refetch } = useQuery(['email'], async () => {
-        const res = await axiosSecure.get(`/student/myClasses/${user?.email}`)
-        return res.data;
-    })
-
+  const [classes,refetch]=useCart();
     // delete class
     const handleDeleteClass = course => {
         Swal.fire({
@@ -44,9 +35,6 @@ const MyClasses = () => {
     }
     return (
         <div className="w-full">
-            <div className="uppercase font-semibold mb-10 items-center text-3xl flex justify-evenly">
-                <h3 >Total Classes: {classes?.length}</h3>
-            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}
@@ -57,6 +45,7 @@ const MyClasses = () => {
                             <th>Class Name</th>
                             <th>Instructor Name</th>
                             <th>Price</th>
+                            <th>Make Payment</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -76,6 +65,9 @@ const MyClasses = () => {
                                 <td>{course.className}</td>
                                 <td >{course.instructorName}</td>
                                 <td >{course.price}</td>
+                                <td >
+                                    <button className="btn btn-sm btn-primary btn-outline">pay</button>
+                                </td>
                                 <td>
                                     <button onClick={() => handleDeleteClass(course)} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
