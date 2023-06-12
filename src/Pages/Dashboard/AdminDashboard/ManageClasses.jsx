@@ -80,8 +80,8 @@ const ManageClasses = () => {
                             <th>Instructor name</th>
                             <th>Instructor email</th>
                             <th>Available seats</th>
-                            <th>Price</th>
                             <th>Status</th>
+                            <th className="text-end">Price</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -102,9 +102,9 @@ const ManageClasses = () => {
                                 <td>{course.instructorName}</td>
                                 <td>{course.instructorEmail}</td>
                                 <td >{course.availableSeats}</td>
-                                <td >{course.price}</td>
                                 <td >{course.status}</td>
-                                <td className=" space-x-2">
+                                <td className="text-end" >{course.price}</td>
+                                <td className="w-3/12 space-x-2">
                                     <button onClick={() => handleApprove(course)} className="btn btn-sm btn-outline btn-primary text-[10px]" disabled={(course.status === 'approve' ? true : false) || (course.status === 'deny' ? true : false)}>Approved</button>
 
                                     <button onClick={() => handleDeny(course)} className="btn btn-sm btn-outline btn-primary text-[10px]" disabled={(course.status === 'approve' ? true : false) || (course.status === 'deny' ? true : false)}>Deny</button>
