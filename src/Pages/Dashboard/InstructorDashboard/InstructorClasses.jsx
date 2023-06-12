@@ -6,8 +6,8 @@ import { AuthContext } from "../../../Providers/AuthProviders";
 const InstructorClasses = () => {
     const { user } = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
-    const { data: classes} = useQuery(['instructorClass'], async () => {
-        const res = await axiosSecure.get(`/classes/${user?.email}`)
+    const { data: classes } = useQuery(['instructorClass'], async () => {
+        const res = await axiosSecure.get(`/instructor/myClasses/${user?.email}`)
         return res.data;
     })
     return (
