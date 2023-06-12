@@ -4,14 +4,17 @@ import useInstructor from "../../Hooks/useInstructor";
 import useStudent from "../../Hooks/useStudent";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const ClassCart = ({ course }) => {
+    const { user } = useContext(AuthContext);
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
     const [isStudent] = useStudent();
     const { className, price, instructorName, image, availableSeats } = course;
     const navigate = useNavigate();
-
+    console.log(user)
     const handleClick = course => {
         if (!isStudent) {
             Swal.fire({
@@ -21,12 +24,20 @@ const ClassCart = ({ course }) => {
             })
             navigate('/login')
         }
-        axios.post(`http://localhost:5000/student/myClasses`, course)
+        const saveClass = {
+            email: user?.email,
+            className: course.className,
+            price: course.price,
+            instructorName: course.instructorName,
+            image: course.image
+        }
+
+        axios.post(`http://localhost:5000/student/myClasses`, saveClass)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Class added Successfully',
+                        title: 'Class booked Successfully',
                         showConfirmButton: false,
                         timer: 1500
                     })
