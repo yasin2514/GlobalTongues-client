@@ -86,8 +86,9 @@ const CheckoutFrom = ({ price, course }) => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
-                        // axios.patch(`http://localhost:5000/classes/approve/${course._id}`, { status: 'approve' })
-                        //     .then(() => { })
+                        axios.patch(`http://localhost:5000/student/myClasses/${course._id}`)
+                            .then(() => { })
+
                         Swal.fire({
                             icon: 'success',
                             title: 'Payments Success',

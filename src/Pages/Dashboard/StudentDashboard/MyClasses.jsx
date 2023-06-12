@@ -5,7 +5,7 @@ import useCart from "../../../Hooks/useCart";
 import { Link } from "react-router-dom";
 
 const MyClasses = () => {
-  const [classes,refetch]=useCart();
+    const [classes, refetch] = useCart();
     // delete class
     const handleDeleteClass = course => {
         Swal.fire({
@@ -69,7 +69,11 @@ const MyClasses = () => {
                                 <td >{course.price}</td>
                                 <td >{course?.status || 'Not enrolled'}</td>
                                 <td >
+                                    {course.status=='Enrolled'?
+                                    <button className="btn btn-sm btn-primary btn-outline" disabled>Paid</button>
+                                    :
                                     <Link to={`/dashboard/payment/${course._id}`} className="btn btn-sm btn-primary btn-outline">pay</Link>
+                                    }
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteClass(course)} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
