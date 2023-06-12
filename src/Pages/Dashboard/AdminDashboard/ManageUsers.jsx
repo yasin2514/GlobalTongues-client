@@ -10,7 +10,6 @@ const ManageUsers = () => {
     const handleMakeAdmin = user => {
         axios.patch(`http://localhost:5000/users/admin/${user._id}`, { role: 'admin' })
             .then(res => {
-                console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
@@ -27,7 +26,6 @@ const ManageUsers = () => {
     const handleMakeInstructor = user => {
         axios.patch(`http://localhost:5000/users/instructor/${user._id}`, { role: 'instructor' })
             .then(res => {
-                console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
@@ -42,9 +40,8 @@ const ManageUsers = () => {
 
     // delete user
     const handleDeleteUser = user => {
-        console.log(user._id);
         Swal.fire({
-            title: `Are you sure to delete this user? ${user.name}`,
+            title: `Are you sure to delete this  ${user.name} user?`,
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
