@@ -104,14 +104,14 @@ const CheckoutFrom = ({ price, course }) => {
 
     return (
         <form className="w-2/3 mx-auto mt-20" onSubmit={handleSubmit}>
-            <CardElement
+            <CardElement 
                 options={{
                     style: {
                         base: {
                             fontSize: '16px',
-                            color: '#424770',
+                            color: 'green',
                             '::placeholder': {
-                                color: '#aab7c4',
+                                color: 'black',
                             },
                         },
                         invalid: {
@@ -120,7 +120,7 @@ const CheckoutFrom = ({ price, course }) => {
                     },
                 }}
             />
-            <button type="submit" className="btn btn-primary btn-sm mt-10" disabled={!stripe || !clientSecret || processing}>
+            <button type="submit" className="btn btn-primary btn-sm mt-20" disabled={!stripe || !clientSecret || processing}>
                 Pay
             </button>
             <div className="mt-10">

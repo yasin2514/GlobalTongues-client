@@ -66,7 +66,7 @@ const MyClasses = () => {
                                 </td>
                                 <td>{course.className}</td>
                                 <td >{course.instructorName}</td>
-                                <td >{course.price}</td>
+                                <td >${course.price}</td>
                                 <td >{course?.status || 'Not enrolled'}</td>
                                 <td >
                                     {course.status=='Enrolled'?

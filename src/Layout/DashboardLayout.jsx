@@ -10,6 +10,7 @@ const DashboardLayout = () => {
     const [isInstructor] = useInstructor();
     const [isStudent] = useStudent();
     const [classes, refetch] = useCart();
+
     refetch()
     return (
         <>
