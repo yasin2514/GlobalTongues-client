@@ -14,7 +14,6 @@ const AddClasses = () => {
 
 
     const onsubmit = data => {
-        console.log(data);
 
         // image hosting
         const formData = new FormData();

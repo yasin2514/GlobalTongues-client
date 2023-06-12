@@ -1,18 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import SectionTItle from "../../Components/sectionTitle/SectionTItle";
 
 const Instructors = () => {
     const [axiosSecure] = useAxiosSecure();
-    const { data: instructor = [],  } = useQuery(['instructor'], async () => {
+    const { data: instructor = []  } = useQuery(['instructor'], async () => {
         const res = await axiosSecure.get('/users/instructor');
         return res.data;
     })
     return (
         <>
-        <div className="text-center mt-10 space-y-2">
-            <h3 className="text-4xl font-bold">Meet Our Top Instructor</h3>
-            <p className="text-green-600">--World top Class--</p>
-        </div>
+        <SectionTItle heading={'Meet Our Top Class Instructor'} subHeading={'World top Class'}>
+        </SectionTItle>
             <div className="grid grid-cols-4 gap-10 m-20">
                 {instructor?.map(user => (
                     <div className="border w-full flex flex-col items-center rounded-3xl p-6  shadow-lg"
