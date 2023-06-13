@@ -26,11 +26,13 @@
     "react-fast-marquee": "^1.6.0",
     "react-hook-form": "^7.44.3",
     "react-icons": "^4.9.0",
+    "react-id-swiper": "^4.0.0",
     "react-router-dom": "^6.12.1",
     "react-simple-captcha": "^9.0.2",
     "react-tooltip": "^5.13.1",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.7.12"
+    "sweetalert2": "^11.7.12",
+    "swiper": "^9.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
