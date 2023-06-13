@@ -1,8 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useAdmin from "../../Hooks/useAdmin";
+import useStudent from "../../Hooks/useStudent";
+import useInstructor from "../../Hooks/useInstructor";
 
 const UserProfile = () => {
     const { user } = useContext(AuthContext);
+    const [isAdmin] = useAdmin()
+    const [isStudent] = useStudent()
+    const [isInstructor] = useInstructor()
     return (
         <>
             <div className=" text-center">
@@ -15,7 +21,10 @@ const UserProfile = () => {
                     </div>
                 </div>
                 <div className="text-center mt-10">
-                    <p className=" text-xl font-bold">Email: {user.email}</p>
+                    {isAdmin && <h2 className="text-5xl font-bold">Admin</h2>}
+                    {isStudent && <h2 className="text-5xl font-bold">Student</h2>}
+                    {isInstructor && <h2 className="text-5xl font-bold">Instructor</h2>}
+                    <p className=" text-xl mt-4 font-bold">Email: {user.email}</p>
                     <p className="px-10"><span className="text-xl text-orange-600">{user.displayName}</span> have curious mind yearning for knowledge and boundless creativity. Embracing challenges, seeking growth, and embracing every moment's beauty. Avid traveler, soaking in diverse cultures, unraveling stories of faraway lands. Inspiring others to dream big, while savoring the small joys of life. Embracing the world's tapestry, one adventure at a time.</p>
 
                     <p className="text-green-600 italic mt-16">---Manage your dashboard & stay connected with Us---</p>
