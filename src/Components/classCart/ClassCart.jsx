@@ -12,7 +12,7 @@ const ClassCart = ({ course }) => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
     const [isStudent] = useStudent();
-    const { className, price, instructorName, image, availableSeats} = course;
+    const { className, price, instructorName, image, availableSeats } = course;
     const navigate = useNavigate();
     const handleClick = course => {
         if (!isStudent) {
@@ -24,7 +24,7 @@ const ClassCart = ({ course }) => {
             navigate('/login')
         }
         const saveClass = {
-            courseId:course._id,
+            courseId: course._id,
             email: user?.email,
             className: course.className,
             price: course.price,
@@ -32,17 +32,19 @@ const ClassCart = ({ course }) => {
             image: course.image
         }
 
-        axios.post(`http://localhost:5000/student/myClasses`, saveClass)
-            .then(res => {
-                if (res.data.insertedId) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Class booked Successfully',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            })
+        if (isStudent) {
+            axios.post(`http://localhost:5000/student/myClasses`, saveClass)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Class booked Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
 
     }
     return (
