@@ -100,7 +100,7 @@ const ManageClasses = () => {
                                 <td>{course.instructorEmail}</td>
                                 <td >{course.availableSeats}</td>
                                 <td >{course.status}</td>
-                                <td className="text-end" >{course.price}</td>
+                                <td className="text-end" >${course.price}</td>
                                 <td className="w-3/12 space-x-2">
                                     <button onClick={() => handleApprove(course)} className="btn btn-sm btn-outline btn-primary text-[10px]" disabled={(course.status === 'approve' ? true : false) || (course.status === 'deny' ? true : false)}>Approved</button>
 

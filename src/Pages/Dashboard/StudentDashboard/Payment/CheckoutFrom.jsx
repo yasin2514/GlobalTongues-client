@@ -8,6 +8,7 @@ import { AuthContext } from "../../../../Providers/AuthProviders";
 import axios from "axios";
 
 const CheckoutFrom = ({ price, course }) => {
+    console.log(course)
 
     const { user } = useContext(AuthContext);
     const [clientSecret, setClientSecret] = useState();
@@ -77,6 +78,7 @@ const CheckoutFrom = ({ price, course }) => {
                 price: price,
                 date: new Date(),
                 courseId: course._id,
+                oldCourseId:course.courseId,
                 className: course.className,
                 instructorName: course.instructorName,
                 image: course.image,
@@ -86,8 +88,12 @@ const CheckoutFrom = ({ price, course }) => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
+                        // for paid status
                         axios.patch(`http://localhost:5000/student/myClasses/${course._id}`)
                             .then(() => { })
+                        // for increment decrement and decrement
+                        // axios.patch(`http://localhost:5000/classes/payment/${course.courseId}`)
+                        //     .then(() => { })
 
                         Swal.fire({
                             icon: 'success',
@@ -104,7 +110,7 @@ const CheckoutFrom = ({ price, course }) => {
 
     return (
         <form className="w-2/3 mx-auto mt-20" onSubmit={handleSubmit}>
-            <CardElement 
+            <CardElement
                 options={{
                     style: {
                         base: {

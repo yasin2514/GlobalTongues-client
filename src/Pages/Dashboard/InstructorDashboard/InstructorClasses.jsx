@@ -44,9 +44,9 @@ const InstructorClasses = () => {
                                 </td>
                                 <td>{course.className}</td>
                                 <td >{course.availableSeats}</td>
-                                <td >{course.price}</td>
+                                <td >${course.price}</td>
                                 <td >{course.status}</td>
-                                <td >{course.totalEnrolled}</td>
+                                <td >{course?.totalEnrolled || 0}</td>
                                 <td className="w-2/12">{course.status == 'deny' ? course.feedback.feedback : "no feedback"}</td>
                                 <td>
                                     <Link to={`/dashboard/updateClass/${course._id}`} className="btn btn-sm btn-outline btn-primary">Update</Link>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const MyClasses = () => {
     const [classes, refetch] = useCart();
+    console.log(classes);
     // delete class
     const handleDeleteClass = course => {
         Swal.fire({

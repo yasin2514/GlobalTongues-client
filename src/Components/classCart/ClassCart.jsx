@@ -12,7 +12,7 @@ const ClassCart = ({ course }) => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
     const [isStudent] = useStudent();
-    const { className, price, instructorName, image, availableSeats } = course;
+    const { className, price, instructorName, image, availableSeats} = course;
     const navigate = useNavigate();
     const handleClick = course => {
         if (!isStudent) {
@@ -24,6 +24,7 @@ const ClassCart = ({ course }) => {
             navigate('/login')
         }
         const saveClass = {
+            courseId:course._id,
             email: user?.email,
             className: course.className,
             price: course.price,

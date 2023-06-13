@@ -28,8 +28,8 @@ const AddClasses = () => {
                         instructorName: user.displayName,
                         instructorEmail: user.email,
                         className: data.className,
-                        availableSeats: data.availableSeats,
-                        price: data.price,
+                        availableSeats: parseInt(data.availableSeats),
+                        price: parseFloat(data.price),
                         image: imgURL,
                         status: 'pending',
                         totalEnrolled: 0

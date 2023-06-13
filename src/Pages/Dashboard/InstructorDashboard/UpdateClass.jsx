@@ -29,8 +29,8 @@ const UpdateClass = () => {
                     const imgURL = imgResponse.data.display_url;
 
                     const updateClass = {
-                        availableSeats: data.availableSeats,
-                        price: data.price,
+                        availableSeats: parseInt(data.availableSeats),
+                        price: parseFloat(data.price),
                         image: imgURL
                     }
                     axiosSecure.patch(`/updateClass/${course._id}`, updateClass)
