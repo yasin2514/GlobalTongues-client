@@ -1,6 +1,8 @@
 import ReactCardCarousel from 'react-card-carousel';
 import SectionTItle from '../../../../Components/sectionTitle/SectionTItle';
-import img from '../../../../assets/demo.png'
+import img1 from '../../../../assets/demo.png'
+import img2 from '../../../../assets/demo2.png'
+import img3 from '../../../../assets/demo3.jpg'
 import moment from 'moment/moment';
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { TfiLocationPin } from "react-icons/tfi";
@@ -41,7 +43,7 @@ const FreeEvents = () => {
                 <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
                     {/* cart-1 */}
                     <div className=' w-full overflow-hidden bg-white'>
-                        <img src={img} alt="" className='hover:scale-110 duration-300 w-full' />
+                        <img src={img1} alt="" className='hover:scale-110 duration-300 w-full h-60 object-cover' />
                         <div className='m-5'>
                             <div className='flex items-center gap-5'>
                                 <div className='pr-5 w-20 border-blue-600  border-r-2'>
@@ -55,9 +57,9 @@ const FreeEvents = () => {
                                 Introduction to Simple Way to Speak.</h2>
                         </div>
                     </div>
-                    {/* cart-2*/}
+                    {/* cart-2 */}
                     <div className=' w-full overflow-hidden bg-white'>
-                        <img src={img} alt="" className='hover:scale-110 duration-300 w-full' />
+                        <img src={img2} alt="" className='hover:scale-110 duration-300 w-full h-60 object-cover' />
                         <div className='m-5'>
                             <div className='flex items-center gap-5'>
                                 <div className='pr-5 w-20 border-blue-600  border-r-2'>
@@ -65,15 +67,15 @@ const FreeEvents = () => {
                                     <br />
                                     <span className='text-xl'>{moment().format('MMMM')}</span>
                                 </div>
-                                <p className='text-sm  '><TfiLocationPin className='inline text-blue-600 mr-2 text-xl'></TfiLocationPin>North Caroline United States</p>
+                                <p className='text-sm  '><TfiLocationPin className='inline text-blue-600 mr-2 text-xl'></TfiLocationPin>Mirpur Dhaka Bangladesh</p>
                             </div>
-                            <h2 className='text-black text-2xl my-5 font-bold'>How to Speak Fluently in English:
+                            <h2 className='text-black text-2xl my-5 font-bold'>How to Speak Fluently in Bengali:
                                 Introduction to Simple Way to Speak.</h2>
                         </div>
                     </div>
                     {/* cart-3 */}
                     <div className=' w-full overflow-hidden bg-white'>
-                        <img src={img} alt="" className='hover:scale-110 duration-300 w-full' />
+                        <img src={img3} alt="" className='hover:scale-110 duration-300 w-full h-60 object-cover' />
                         <div className='m-5'>
                             <div className='flex items-center gap-5'>
                                 <div className='pr-5 w-20 border-blue-600  border-r-2'>
@@ -81,12 +83,13 @@ const FreeEvents = () => {
                                     <br />
                                     <span className='text-xl'>{moment().format('MMMM')}</span>
                                 </div>
-                                <p className='text-sm  '><TfiLocationPin className='inline text-blue-600 mr-2 text-xl'></TfiLocationPin>North Caroline United States</p>
+                                <p className='text-sm  '><TfiLocationPin className='inline text-blue-600 mr-2 text-xl'></TfiLocationPin>West island states</p>
                             </div>
-                            <h2 className='text-black text-2xl my-5 font-bold'>How to Speak Fluently in English:
+                            <h2 className='text-black text-2xl my-5 font-bold'>How to Speak Fluently in Chinese:
                                 Introduction to Simple Way to Speak.</h2>
                         </div>
                     </div>
+                  
                 </ReactCardCarousel>
             </div>
         </div>

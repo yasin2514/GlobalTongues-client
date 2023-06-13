@@ -12,9 +12,9 @@ const Instructors = () => {
         <>
         <SectionTItle heading={'Meet Our Top Class Instructor'} subHeading={'World top Class'}>
         </SectionTItle>
-            <div className="grid grid-cols-4 gap-10 m-20">
+            <div className="grid grid-cols-4   gap-10 m-20">
                 {instructor?.map(user => (
-                    <div className="border w-full flex flex-col items-center rounded-3xl p-6  shadow-lg"
+                    <div className="border w-full flex flex-col hover:scale-110 duration-300 items-center rounded-3xl p-6  shadow-lg"
                         key={user._id}
                     >
                         <div className=" h-52">

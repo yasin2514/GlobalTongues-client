@@ -48,7 +48,7 @@ const ClassCart = ({ course }) => {
 
     }
     return (
-        <div className={`shadow-2xl w-full overflow-hidden flex flex-col rounded-lg relative hover:scale-105 duration-150 ${availableSeats == 0 ? "bg-red-500 text-white" : ""}`}>
+        <div className={`shadow-2xl w-full overflow-hidden flex flex-col rounded-lg relative hover:scale-110 duration-200 ${availableSeats == 0 ? "bg-red-500 text-white" : ""}`}>
             <img src={image} alt="" className="w-full h-48 object-cover" />
             <div className="mt-5 px-6 pb-6">
                 <h4 className="font-bold text-xl">{className}</h4>
