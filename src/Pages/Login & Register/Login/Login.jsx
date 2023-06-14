@@ -96,8 +96,8 @@ const Login = () => {
     return (
         <div className="hero min-h-screen  w-full bg-gray-100 py-10">
             <PageTitle title={'SignIn'}></PageTitle>
-            <div className="md:hero-content flex-reverse items-center justify-center lg:flex-row">
-                <div className="w-full lg:w-1/2 order-last lg:order-1">
+            <div className="md:hero-content items-center justify-center lg:flex-row">
+                <div className="w-full lg:w-1/2">
                     <img src={login} alt="" />
                     <Lottie
                         animationData={login}
