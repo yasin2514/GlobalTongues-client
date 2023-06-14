@@ -9,17 +9,17 @@ const LevelUp = () => {
         AOS.init();
     }, [])
     return (
-        <div className="flex items-center gap-32 py-20 px-20 bg-blue-50">
-            <div className="w-1/2 relative mb-20" data-aos="flip-left" data-aos-duration="1000">
-                <div className="w-11/12">
+        <div className="md:flex items-center gap-32 py-20 px-5 md:px-20 bg-blue-50">
+            <div className="w-full md:1/2 relative mb-20" data-aos="flip-left" data-aos-duration="1000">
+                <div className="w-11/12 hidden md:block">
                     <img src={img2} alt="" className="w-full" />
                 </div>
-                <div className="w-2/3 absolute -right-20 -bottom-28  bg-opacity-95 bg-blue-800 h-72 p-10 text-white rounded-br-[100px] text-xl text-center">
+                <div className="w-full md:w-2/3 md:absolute md:-right-20 md:-bottom-28  bg-opacity-95 bg-blue-800 h-72 p-10 text-white rounded-br-[100px] text-xl text-center">
                     <FaQuoteLeft className="text-4xl"></FaQuoteLeft>
                     <p className="mt-5">The limits of my language mean the limits of my world.One language sets you in a corridor for life.Language is the road map of a culture. </p>
                 </div>
             </div>
-            <div className="w-1/2 space-y-12 mb-20" data-aos="zoom-in-down" data-aos-duration="1000">
+            <div className="w-full md:w-1/2 space-y-12 mb-20" data-aos="zoom-in-down" data-aos-duration="1000">
                 <SectionTItle heading="Level Up you language Skills" subHeading="Enrolled our class">
                 </SectionTItle>
                 <div data-aos="zoom-in-down" data-aos-duration="1000" className="space-y-10">

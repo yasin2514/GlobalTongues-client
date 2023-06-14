@@ -18,7 +18,7 @@ const PopularClass = () => {
         <div className="w-full" >
             <SectionTItle heading={'Our Popular Classes'} subHeading={'Explore our Class'} >
             </SectionTItle>
-            <div className="grid grid-cols-3 md:max-w-6xl xl:w-6xl mx-auto mt-10 md:gap-14 xl:gap-20 " >
+            <div className="grid grid-cols-1 px-10 md:px-0 md:grid-cols-3 md:max-w-6xl xl:w-6xl mx-auto mt-10 gap-14 xl:gap-20 " >
                 {classes?.slice(0,6).map(course => <ClassCart
                     key={course._id}
                     course={course}

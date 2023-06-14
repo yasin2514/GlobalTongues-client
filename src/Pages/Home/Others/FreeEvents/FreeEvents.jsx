@@ -14,13 +14,13 @@ const FreeEvents = () => {
         AOS.init();
     }, [])
     return (
-        <div className=' py-20 bg-red-50 flex items-center justify-center'>
-            <div className=' w-1/2 '>
+        <div className=' py-20 bg-red-50 md:flex items-center justify-center'>
+            <div className='w-full md:w-1/2 '>
                 <SectionTItle heading="On Going Event Free Classes" subHeading="Join class today">
                 </SectionTItle>
-                <div className='mx-20 my-10 '  data-aos="zoom-in-up" data-aos-duration="1000">
+                <div className='px-5 md:mx-20 my-10 '  data-aos="zoom-in-up" data-aos-duration="1000">
                     <p className='text-xl'>We are an open and friendly swimming school. Each of our little floats is special and unique to us. We know each of our students not only by name, but most of all we listen to them and try to get to know them well. We teach swimming, but also try to pass on moral principles and values.</p>
-                    <div className='mt-10 flex gap-24'>
+                    <div className='mt-10 md:flex gap-24'>
                         <ul className='space-y-2'>
                             <li className='flex items-center gap-2 font-[600]'><AiOutlineCheckCircle className='text-blue-600 inline text-xl'></AiOutlineCheckCircle>Hindi Language learning</li>
                             <li className='flex items-center gap-2 font-[600]'><AiOutlineCheckCircle className='text-blue-600 inline text-xl'></AiOutlineCheckCircle>French Language learning</li>
@@ -45,7 +45,7 @@ const FreeEvents = () => {
                     </div>
                 </div>
             </div>
-            <div className='relative w-1/2'>
+            <div className='relative w-full h-[70vh] md:h-full md:w-1/2'>
                 <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
                     {/* cart-1 */}
                     <div className=' w-full overflow-hidden bg-white'>
