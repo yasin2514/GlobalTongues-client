@@ -95,4 +95,4 @@ const Banner = () => {
   )
 }
 
-export default Banner;j
+export default Banner;

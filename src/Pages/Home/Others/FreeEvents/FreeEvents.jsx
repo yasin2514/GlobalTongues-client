@@ -8,7 +8,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import { TfiLocationPin } from "react-icons/tfi";
 const FreeEvents = () => {
     return (
-        <div className=' py-20 flex items-center justify-center bg-orange-50'>
+        <div className=' py-20 flex items-center justify-center'>
             <div className=' w-1/2 '>
                 <SectionTItle heading="On Going Event Free Classes" subHeading="Join class today">
                 </SectionTItle>

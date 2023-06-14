@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import logo from '../../../assets/logo-3.png'
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
@@ -17,24 +17,11 @@ const Navbar = () => {
     const [isInstructor] = useInstructor();
     const [isStudent] = useStudent();
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
-    // change navbar color scrolling
-    const [color, setColor] = useState(false)
-
-    const changeColor = () => {
-        if (window.scrollY >= 90) {
-            setColor(true)
-        }
-        else {
-            setColor(false)
-        }
-    }
-    window.addEventListener('scroll', changeColor)
 
 
     const handleTheme = e => {
         if (e.target.checked) {
             setTheme("dark")
-            
         }
         else {
             setTheme("light")
@@ -78,7 +65,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className={`navbar absolute text-white pt-6 top-0 z-20 ${color ? "bg-black bg-opacity-90 duration-700 sticky py-5" : "bg-transparent bg-opacity-50"}`}>
+        <div className="z-20 py-6 navbar sticky top-0 bg-black text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
