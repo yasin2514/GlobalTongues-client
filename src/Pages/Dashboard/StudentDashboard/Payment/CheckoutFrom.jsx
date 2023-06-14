@@ -8,7 +8,6 @@ import { AuthContext } from "../../../../Providers/AuthProviders";
 import axios from "axios";
 
 const CheckoutFrom = ({ price, course }) => {
-    console.log(course)
 
     const { user } = useContext(AuthContext);
     const [clientSecret, setClientSecret] = useState();
@@ -86,15 +85,10 @@ const CheckoutFrom = ({ price, course }) => {
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    console.log(res.data);
                     if (res.data.result.insertedId) {
                         // for paid status
                         axios.patch(`https://global-tongues-server.vercel.app/student/myClasses/${course._id}`)
                             .then(() => { })
-                        // for increment decrement and decrement
-                        // axios.patch(`https://global-tongues-server.vercel.app/classes/payment/${course.courseId}`)
-                        //     .then(() => { })
-
                         Swal.fire({
                             icon: 'success',
                             title: 'Payments Success',
@@ -126,7 +120,7 @@ const CheckoutFrom = ({ price, course }) => {
                     },
                 }}
             />
-            <button type="submit" className="btn btn-primary btn-sm mt-20" disabled={!stripe || !clientSecret || processing}>
+            <button type="submit" className="btn btn-primary btn-sm mt-20" disabled={!stripe || !clientSecret || processing? true : false}>
                 Pay
             </button>
             <div className="mt-10">

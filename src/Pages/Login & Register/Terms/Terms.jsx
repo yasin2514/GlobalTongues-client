@@ -3,7 +3,7 @@ import PageTitle from '../../../Components/PageTitle/PageTitle';
 
 const Terms = () => {
     return (
-        <div className='max-w-full px-20 my-20'>
+        <div className='max-w-full px-7 md:px-20 my-20'>
              <PageTitle title="Terms" />
             <div>
                 <h2 className='text-3xl  font-bold'>Please read Carefully Accepts Terms & Condition </h2>

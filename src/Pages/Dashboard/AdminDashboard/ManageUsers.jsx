@@ -53,7 +53,6 @@ const ManageUsers = () => {
             if (result.isConfirmed) {
                 axios.delete(`https://global-tongues-server.vercel.app/users/${user._id}`)
                     .then(res => {
-                        console.log(res.data);
                         if (res.data.deletedCount) {
                             refetch();
                             Swal.fire(

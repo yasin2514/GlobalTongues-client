@@ -47,7 +47,6 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 const saveUser = {
                     email: loggedUser.email,
                     name: loggedUser.displayName,
@@ -95,27 +94,27 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-gray-100 py-10">
+        <div className="hero min-h-screen  w-full bg-gray-100 py-10">
             <PageTitle title={'SignIn'}></PageTitle>
-            <div className="hero-content w-full flex-col lg:flex-row">
-                <div className="w-full lg:w-1/2">
+            <div className="md:hero-content flex-reverse items-center justify-center lg:flex-row">
+                <div className="w-full lg:w-1/2 order-last lg:order-1">
                     <img src={login} alt="" />
                     <Lottie
                         animationData={login}
                         loop={true} />
                 </div>
 
-                <div className="card w-full lg:w-1/2 py-10  bg-white">
+                <div className="card w-full lg:w-1/2 py-10   bg-white">
                     <h1 className="text-3xl ms-10 text-center font-bold text-blue-600">SignIn</h1>
                     <p className="ms-10 text-center text-green-900 text-sm">Let's go fill Up the form and enjoy our service,HurryUp!</p>
 
                     <div className="text-center mt-10 space-x-10">
                         <button onClick={handleGoogleLogin} className="btn btn-outline"><FcGoogle className="text-3xl"></FcGoogle></button>
                     </div>
-                    <div className="divider mx-32 mt-10 font-bold"> OR  continue With</div>
+                    <div className="divider mx-10 md:mx-32 mt-10 font-bold"> OR  continue With</div>
 
                     {/* form start */}
-                    <form onSubmit={handleSubmit(onsubmit)} className="card-body ">
+                    <form onSubmit={handleSubmit(onsubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email*</span>
@@ -141,9 +140,9 @@ const Login = () => {
                             {errors.password?.type === 'required' && <p role="alert" className="text-red-600 text-sm">password is required</p>}
                         </div>
 
-                        <div className="label flex justify-evenly gap-2">
+                        <div className="label w-full flex flex-wrap justify-evenly gap-2">
                             <LoadCanvasTemplate />
-                            <input type="text" onMouseLeave={handleValidateCaptcha} placeholder="type the captcha" className="input input-bordered" name="captcha" />
+                            <input type="text" onMouseLeave={handleValidateCaptcha} placeholder="type the captcha" className="input w-full input-bordered" name="captcha" />
 
 
                         </div>

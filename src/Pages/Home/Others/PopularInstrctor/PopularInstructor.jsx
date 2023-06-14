@@ -23,9 +23,9 @@ const PopularInstructor = () => {
                 <div className="flex my-20">
                     {instructor?.slice(0, 6).map(user => (
                         <div
-                        data-aos="zoom-in"
-                         className="border w-80 mx-10 hover:scale-110  duration-300  flex flex-col items-center rounded-3xl p-6  shadow-lg"
+                         className="w-80 mx-10 flex flex-col items-center rounded-3xl p-6  shadow-lg"
                             key={user._id}
+                            data-aos="zoom-in"
                         >
                             <div className=" h-52 ">
                                 <img src={user.photo} alt="" className="w-52 h-full object-cover rounded-full" />

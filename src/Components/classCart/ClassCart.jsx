@@ -49,10 +49,10 @@ const ClassCart = ({ course }) => {
     }
     return (
 
-        <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-        >
+        // <motion.button
+        //     whileHover={{ scale: 1.1 }}
+        //     whileTap={{ scale: 0.9 }}
+        // >
             <div className={`shadow-2xl w-full overflow-hidden flex flex-col rounded-lg relative ${availableSeats == 0 ? "bg-red-500 text-white" : ""}`} data-aos="flip-right" >
                 <img src={image} alt="" className="w-full h-48 object-cover" />
                 <div className="mt-5 px-6 pb-6">
@@ -65,7 +65,7 @@ const ClassCart = ({ course }) => {
                     <button onClick={() => handleClick(course)} disabled={(isAdmin ? true : false) || (isInstructor ? true : false) || (availableSeats == 0 ? true : false)} className={`${availableSeats == 0 ? " btn-outline btn-sm btn text-white" : "btn btn-sm btn-primary btn-outline"}`}>Add class</button>
                 </div>
             </div>
-        </motion.button>
+        // </motion.button>
     );
 };
 

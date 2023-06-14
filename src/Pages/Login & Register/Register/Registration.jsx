@@ -23,7 +23,6 @@ const Registration = () => {
 
 
     const onSubmit = data => {
-        console.log(data);
         createUser(data.email, data.password)
             .then(() => {
                 updateUserProfile(data.name, data.photoUrl)

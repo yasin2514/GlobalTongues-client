@@ -7,7 +7,6 @@ import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 const MyClasses = () => {
     const [classes, refetch] = useCart();
-    console.log(classes);
     // delete class
     const handleDeleteClass = course => {
         Swal.fire({
@@ -22,7 +21,6 @@ const MyClasses = () => {
             if (result.isConfirmed) {
                 axios.delete(`https://global-tongues-server.vercel.app/student/myClasses/${course._id}`)
                     .then(res => {
-                        console.log(res.data);
                         if (res.data.deletedCount) {
                             refetch();
                             Swal.fire(
