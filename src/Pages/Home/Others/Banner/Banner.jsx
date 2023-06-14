@@ -1,8 +1,6 @@
 import { useKeenSlider } from "keen-slider/react"
 import 'keen-slider/keen-slider.min.css'
 import "./Banner.css"
-import Navbar from "../../../Shared/Navbar/Navbar"
-// import { Link } from "react-router-dom"
 
 const Banner = () => {
   const [sliderRef] = useKeenSlider(
@@ -43,49 +41,48 @@ const Banner = () => {
 
   return (
     <div className="relative">
-      <div ref={sliderRef} className="keen-slider h-[60vh]">
+      <div ref={sliderRef} className="keen-slider h-[90vh]">
 
         {/* slider-1 */}
         <div className="keen-slider__slide number-slide1">
-          <div className="flex flex-col w-10/12 items-end  text-center space-y-5">
-            <h2 className="text-4xl">
-              Putting Children First
+          <div className="flex flex-col w-10/12 items-center  text-center space-y-5">
+            <h2 className="text-5xl font-bold">
+              To have another
               <br />
-
-              Preparing Children For
+              language is to possess
               <br />
-              Success In Life</h2>
-            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque, sint magni porro eaque inventore a sit nisi ratione dicta ut, <br /> perspiciatis veritatis repellendus aut fuga quia, debitis totam enim.</p>
+              a second soul.</h2>
+            <p className="text-sm">
+              Global Tongues is a Language School Courses & Learning Management System Education , <br /> Work with us. Learn with us. Improve with us.</p>
 
             <button className="btn btn-sm">Learn More</button>
           </div>
         </div>
         {/* slider-2 */}
         <div className="keen-slider__slide number-slide2">
-          <div className="flex flex-col w-10/12 items-end  text-center space-y-5">
-            <h2 className="text-4xl">
-              Putting Children First
+          <div className="flex flex-col w-10/12 items-center  text-center space-y-5">
+            <h2 className="text-5xl font-bold">
+              Every student matters,
               <br />
-
-              Preparing Children For
+              every moment counts
               <br />
               Success In Life</h2>
-            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque, sint magni porro eaque inventore a sit nisi ratione dicta ut, <br /> perspiciatis veritatis repellendus aut fuga quia, debitis totam enim.</p>
-
+            <p className="text-sm">
+              Global Tongues is a Language School Courses & Learning Management System Education , <br /> Work with us. Learn with us. Improve with us.</p>
             <button className="btn btn-sm">Learn More</button>
           </div>
         </div>
         {/* slider-3 */}
         <div className="keen-slider__slide number-slide3">
-          <div className="flex flex-col w-10/12 items-end  text-center space-y-5">
-            <h2 className="text-4xl">
+          <div className="flex flex-col w-10/12 items-center  text-center space-y-5">
+            <h2 className="text-5xl font-bold">
               Putting Children First
               <br />
-
               Preparing Children For
               <br />
               Success In Life</h2>
-            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque, sint magni porro eaque inventore a sit nisi ratione dicta ut, <br /> perspiciatis veritatis repellendus aut fuga quia, debitis totam enim.</p>
+            <p className="text-sm">
+              Global Tongues is a Language School Courses & Learning Management System Education , <br /> Work with us. Learn with us. Improve with us.</p>
 
             <button className="btn btn-sm">Learn More</button>
           </div>
@@ -98,4 +95,4 @@ const Banner = () => {
   )
 }
 
-export default Banner;
+export default Banner;j
