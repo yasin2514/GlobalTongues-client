@@ -33,7 +33,7 @@ const ClassCart = ({ course }) => {
         }
 
         if (isStudent) {
-            axios.post(`http://localhost:5000/student/myClasses`, saveClass)
+            axios.post(`https://global-tongues-server.vercel.app/student/myClasses`, saveClass)
                 .then(res => {
                     if (res.data.insertedId) {
                         Swal.fire({

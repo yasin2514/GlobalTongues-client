@@ -17,7 +17,7 @@ const ManageClasses = () => {
 
     //  // make approved
     const handleApprove = course => {
-        axios.patch(`http://localhost:5000/classes/approve/${course._id}`, { status: 'approve' })
+        axios.patch(`https://global-tongues-server.vercel.app/classes/approve/${course._id}`, { status: 'approve' })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     refetch();
@@ -32,7 +32,7 @@ const ManageClasses = () => {
     }
     //  // make deny
     const handleDeny = course => {
-        axios.patch(`http://localhost:5000/classes/deny/${course._id}`, { status: 'deny' })
+        axios.patch(`https://global-tongues-server.vercel.app/classes/deny/${course._id}`, { status: 'deny' })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     refetch();
@@ -52,7 +52,7 @@ const ManageClasses = () => {
     }
     const handleFeedback = (id) => {
         const feedback = feedbackRef.current.value;
-        axios.patch(`http://localhost:5000/classes/${id}`, { feedback })
+        axios.patch(`https://global-tongues-server.vercel.app/classes/${id}`, { feedback })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     refetch();
@@ -67,7 +67,7 @@ const ManageClasses = () => {
     }
     return (
         <div className="w-full">
-             <PageTitle title="Manage Classes" />
+            <PageTitle title="Manage Classes" />
 
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">

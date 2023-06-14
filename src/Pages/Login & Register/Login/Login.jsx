@@ -54,7 +54,7 @@ const Login = () => {
                     photo: loggedUser?.photoURL,
                     role: 'student'
                 }
-                axios.post('http://localhost:5000/users', saveUser)
+                axios.post('https://global-tongues-server.vercel.app/users', saveUser)
                     .then(res => {
                         navigate(from, { relative: true });
                         if (res.data.insertedId) {

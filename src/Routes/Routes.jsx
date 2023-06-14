@@ -77,7 +77,7 @@ const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <PrivateRoute><StudentRoute><Payment></Payment></StudentRoute></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/student/class/${params.id}`)
+                loader: ({ params }) => fetch(`https://global-tongues-server.vercel.app/student/class/${params.id}`)
             },
             {
                 path: 'paymentHistory',
@@ -110,10 +110,10 @@ const router = createBrowserRouter([
             {
                 path: 'updateClass/:id',
                 element: <PrivateRoute><InstructorRoute><UpdateClass></UpdateClass></InstructorRoute></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/class/${params.id}`)
+                loader: ({ params }) => fetch(`https://global-tongues-server.vercel.app/class/${params.id}`)
             }
         ],
-errorElement: <Error></Error>
+        errorElement: <Error></Error>
     },
 
 

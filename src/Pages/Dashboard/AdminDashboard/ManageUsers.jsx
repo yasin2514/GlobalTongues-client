@@ -5,11 +5,11 @@ import useUsers from "../../../Hooks/useUsers";
 import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 const ManageUsers = () => {
-    const [users,refetch] = useUsers();
-   
+    const [users, refetch] = useUsers();
+
     // make admin
     const handleMakeAdmin = user => {
-        axios.patch(`http://localhost:5000/users/admin/${user._id}`, { role: 'admin' })
+        axios.patch(`https://global-tongues-server.vercel.app/users/admin/${user._id}`, { role: 'admin' })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     refetch();
@@ -25,7 +25,7 @@ const ManageUsers = () => {
 
     // make admin
     const handleMakeInstructor = user => {
-        axios.patch(`http://localhost:5000/users/instructor/${user._id}`, { role: 'instructor' })
+        axios.patch(`https://global-tongues-server.vercel.app/users/instructor/${user._id}`, { role: 'instructor' })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     refetch();
@@ -51,7 +51,7 @@ const ManageUsers = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/users/${user._id}`)
+                axios.delete(`https://global-tongues-server.vercel.app/users/${user._id}`)
                     .then(res => {
                         console.log(res.data);
                         if (res.data.deletedCount) {
@@ -69,7 +69,7 @@ const ManageUsers = () => {
     }
     return (
         <div className="w-full">
-             <PageTitle title="Manage Users" />
+            <PageTitle title="Manage Users" />
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}
@@ -106,7 +106,7 @@ const ManageUsers = () => {
                                     <button onClick={() => handleMakeInstructor(user)} disabled={(user.role === 'instructor' ? true : false) || (user.role === 'admin' ? true : false) || (user.role === 'superAdmin' ? true : false)} className="btn btn-sm btn-outline btn-primary text-[12px]">Make Instructor</button>
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDeleteUser(user)} disabled={user.role ==='admin' ? true : false} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDeleteUser(user)} disabled={user.role === 'admin' ? true : false} className="btn btn-ghost bg-red-600 text-white text-xl"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                             </tr>
                         ))}

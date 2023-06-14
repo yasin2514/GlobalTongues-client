@@ -78,7 +78,7 @@ const CheckoutFrom = ({ price, course }) => {
                 price: price,
                 date: new Date(),
                 courseId: course._id,
-                oldCourseId:course.courseId,
+                oldCourseId: course.courseId,
                 className: course.className,
                 instructorName: course.instructorName,
                 image: course.image,
@@ -89,10 +89,10 @@ const CheckoutFrom = ({ price, course }) => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
                         // for paid status
-                        axios.patch(`http://localhost:5000/student/myClasses/${course._id}`)
+                        axios.patch(`https://global-tongues-server.vercel.app/student/myClasses/${course._id}`)
                             .then(() => { })
                         // for increment decrement and decrement
-                        // axios.patch(`http://localhost:5000/classes/payment/${course.courseId}`)
+                        // axios.patch(`https://global-tongues-server.vercel.app/classes/payment/${course.courseId}`)
                         //     .then(() => { })
 
                         Swal.fire({

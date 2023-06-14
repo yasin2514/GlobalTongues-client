@@ -20,7 +20,7 @@ const MyClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/student/myClasses/${course._id}`)
+                axios.delete(`https://global-tongues-server.vercel.app/student/myClasses/${course._id}`)
                     .then(res => {
                         console.log(res.data);
                         if (res.data.deletedCount) {
@@ -38,7 +38,7 @@ const MyClasses = () => {
     }
     return (
         <div className="w-full">
-             <PageTitle title="My Class" />
+            <PageTitle title="My Class" />
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}
@@ -72,10 +72,10 @@ const MyClasses = () => {
                                 <td >${course.price}</td>
                                 <td >{course?.status || 'Not enrolled'}</td>
                                 <td >
-                                    {course.status=='Enrolled'?
-                                    <button className="btn btn-sm btn-primary btn-outline" disabled>Paid</button>
-                                    :
-                                    <Link to={`/dashboard/payment/${course._id}`} className="btn btn-sm btn-primary btn-outline">pay</Link>
+                                    {course.status == 'Enrolled' ?
+                                        <button className="btn btn-sm btn-primary btn-outline" disabled>Paid</button>
+                                        :
+                                        <Link to={`/dashboard/payment/${course._id}`} className="btn btn-sm btn-primary btn-outline">pay</Link>
                                     }
                                 </td>
                                 <td>

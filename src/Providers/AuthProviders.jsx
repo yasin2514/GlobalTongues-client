@@ -48,7 +48,7 @@ const AuthProviders = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                axios.post('https://global-tongues-server.vercel.app/jwt', { email: currentUser.email })
                     .then(data => {
                         localStorage.setItem("access-token", data.data.token)
                         setLoading(false);
