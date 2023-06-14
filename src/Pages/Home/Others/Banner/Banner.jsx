@@ -1,6 +1,7 @@
 import { useKeenSlider } from "keen-slider/react"
 import 'keen-slider/keen-slider.min.css'
 import "./Banner.css"
+import Navbar from "../../../Shared/Navbar/Navbar"
 // import { Link } from "react-router-dom"
 
 const Banner = () => {
@@ -41,7 +42,7 @@ const Banner = () => {
   )
 
   return (
-    <>
+    <div className="relative">
       <div ref={sliderRef} className="keen-slider h-[60vh]">
 
         {/* slider-1 */}
@@ -93,7 +94,7 @@ const Banner = () => {
 
 
       </div>
-    </>
+    </div>
   )
 }
 
