@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo-3.png'
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
@@ -52,7 +52,7 @@ const Navbar = () => {
 
 
     const menu = <>
-        <li className='hover:text-Orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
+        <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
         <li className='hover:text-orange-600'><NavLink to={'/allInstructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Instructors</NavLink></li>
         <li className='hover:text-orange-600'><NavLink to={'/allClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Classes</NavLink></li>
         {

@@ -3,23 +3,36 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import useAdmin from "../../Hooks/useAdmin";
 import useStudent from "../../Hooks/useStudent";
 import useInstructor from "../../Hooks/useInstructor";
+import { motion } from "framer-motion"
+import { useEffect } from "react";
+import AOS from 'aos';
+
 
 const UserProfile = () => {
     const { user } = useContext(AuthContext);
     const [isAdmin] = useAdmin()
     const [isStudent] = useStudent()
     const [isInstructor] = useInstructor()
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <>
-            <div className=" text-center">
+            <div className=" text-center" data-aos="zoom-in">
                 <h3 className="text-4xl font-bold">Welcome <span className="text-orange-600">{user.displayName}</span></h3>
             </div>
-            <div className="flex flex-col items-center mt-10">
+            <div className="flex flex-col items-center mt-10" data-aos="zoom-in">
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                >
                 <div className="avatar online">
                     <div className="w-52 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={user.photoURL} />
                     </div>
                 </div>
+                </motion.button>
                 <div className="text-center mt-10">
                     {isAdmin && <h2 className="text-5xl font-bold">Admin</h2>}
                     {isStudent && <h2 className="text-5xl font-bold">Student</h2>}

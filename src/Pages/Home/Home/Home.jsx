@@ -1,3 +1,4 @@
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 import Banner from "../Others/Banner/Banner";
 import FreeEvents from "../Others/FreeEvents/FreeEvents";
 import LevelUp from "../Others/Levelup/LevelUp";
@@ -6,7 +7,8 @@ import PopularInstructor from "../Others/PopularInstrctor/PopularInstructor";
 
 const Home = () => {
     return (
-        <div className="">
+        <div className="space-y-24">
+            <PageTitle title={'Home'}></PageTitle>
             <Banner></Banner>
             <PopularClass></PopularClass>
             <LevelUp></LevelUp>

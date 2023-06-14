@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import useCart from "../../../Hooks/useCart";
 import { Link } from "react-router-dom";
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 const MyClasses = () => {
     const [classes, refetch] = useCart();
@@ -37,6 +38,7 @@ const MyClasses = () => {
     }
     return (
         <div className="w-full">
+             <PageTitle title="My Class" />
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}

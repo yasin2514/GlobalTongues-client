@@ -4,6 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { useRef } from "react";
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 const ManageClasses = () => {
     const [modalData, setModalData] = useState();
@@ -66,6 +67,8 @@ const ManageClasses = () => {
     }
     return (
         <div className="w-full">
+             <PageTitle title="Manage Classes" />
+
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}

@@ -9,6 +9,7 @@ import { AuthContext } from "../../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import axios from "axios";
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 
 const Login = () => {
@@ -95,6 +96,7 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-gray-100 py-10">
+            <PageTitle title={'SignIn'}></PageTitle>
             <div className="hero-content w-full flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2">
                     <img src={login} alt="" />

@@ -3,6 +3,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import { Link } from "react-router-dom";
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 const InstructorClasses = () => {
     const { user } = useContext(AuthContext);
@@ -13,6 +14,8 @@ const InstructorClasses = () => {
     })
     return (
         <div className="w-full">
+             <PageTitle title="Instructor Classes" />
+
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}

@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { FaTrashAlt } from "react-icons/fa";
 import useUsers from "../../../Hooks/useUsers";
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 const ManageUsers = () => {
     const [users,refetch] = useUsers();
@@ -68,6 +69,7 @@ const ManageUsers = () => {
     }
     return (
         <div className="w-full">
+             <PageTitle title="Manage Users" />
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}

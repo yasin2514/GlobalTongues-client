@@ -1,8 +1,13 @@
 import { useKeenSlider } from "keen-slider/react"
 import 'keen-slider/keen-slider.min.css'
 import "./Banner.css"
+import AOS from 'aos';
+import { useEffect } from "react";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+}, [])
   const [sliderRef] = useKeenSlider(
     {
       loop: true,
@@ -40,12 +45,12 @@ const Banner = () => {
   )
 
   return (
-    <div className="relative">
+    <div className="relative bg-black w-full">
       <div ref={sliderRef} className="keen-slider h-[90vh]">
 
         {/* slider-1 */}
         <div className="keen-slider__slide number-slide1">
-          <div className="flex flex-col w-10/12 items-center  text-center space-y-5">
+          <div className="flex flex-col w-10/12 items-center  text-center space-y-5"  data-aos="zoom-in">
             <h2 className="text-5xl font-bold">
               To have another
               <br />
@@ -60,7 +65,7 @@ const Banner = () => {
         </div>
         {/* slider-2 */}
         <div className="keen-slider__slide number-slide2">
-          <div className="flex flex-col w-10/12 items-center  text-center space-y-5">
+          <div className="flex flex-col w-10/12 items-center  text-center space-y-5"  data-aos="zoom-in">
             <h2 className="text-5xl font-bold">
               Every student matters,
               <br />
@@ -74,7 +79,7 @@ const Banner = () => {
         </div>
         {/* slider-3 */}
         <div className="keen-slider__slide number-slide3">
-          <div className="flex flex-col w-10/12 items-center  text-center space-y-5">
+          <div className="flex flex-col w-10/12 items-center  text-center space-y-5"  data-aos="zoom-in">
             <h2 className="text-5xl font-bold">
               Putting Children First
               <br />

@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import axios from "axios";
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 
 
@@ -57,7 +58,7 @@ const Registration = () => {
 
     return (
         <div className="hero min-h-screen bg-gray-100 py-10">
-            {/* <PageTitle title="Register" /> */}
+            <PageTitle title={'Registration'}></PageTitle>
             <div className="hero-content w-full flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2">
                     <img src={login} alt="" />

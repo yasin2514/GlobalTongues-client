@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-// import PageTitle from '../Shared/PageTitle/PageTitle';
+import PageTitle from '../../../Components/PageTitle/PageTitle';
 
 const Terms = () => {
     return (
         <div className='max-w-full px-20 my-20'>
-             {/* <PageTitle title="Terms" /> */}
+             <PageTitle title="Terms" />
             <div>
                 <h2 className='text-3xl  font-bold'>Please read Carefully Accepts Terms & Condition </h2>
                 <span className='flex flex-col gap-4 my-10'>

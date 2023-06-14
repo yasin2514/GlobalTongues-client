@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 const AddClasses = () => {
@@ -55,6 +56,8 @@ const AddClasses = () => {
     };
     return (
         <div>
+             <PageTitle title="Add Class" />
+
             <h3 className="text-3xl text-center font-semibold mb-5">Add a Class</h3>
 
             {/* form start */}

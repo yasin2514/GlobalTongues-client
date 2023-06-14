@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import ClassCart from "../../Components/classCart/classCart";
+import PageTitle from "../../Components/PageTitle/PageTitle";
 
 const Classes = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -10,6 +11,7 @@ const Classes = () => {
     })
     return (
         <div className="">
+            <PageTitle title={'Classes'}></PageTitle>
             <div className="classPageBanner h-[50vh] flex flex-col items-center justify-center text-white">
                 <h3 className="text-5xl font-bold">Our All Language Classes</h3>
                 <p className="text-gray-100 ">Add your course  for learn and speck fluently.</p>

@@ -1,5 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { useEffect } from "react";
+import AOS from 'aos';
+import PageTitle from "../../Components/PageTitle/PageTitle";
 
 const Instructors = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -7,15 +10,19 @@ const Instructors = () => {
         const res = await axiosSecure.get('/users/instructor');
         return res.data;
     })
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <>
-             <div className="InstructorBanner h-[50vh] flex flex-col items-center justify-center text-white">
+            <PageTitle title={'Instructor'}></PageTitle>
+            <div className="InstructorBanner h-[50vh] flex flex-col items-center justify-center text-white">
                 <h3 className="text-5xl font-bold">Our  World Class Instructor</h3>
                 <p className="text-gray-100 ">All instructor have the ability to tech you.</p>
             </div>
             <div className="grid grid-cols-4   gap-10 m-20">
                 {instructor?.map(user => (
-                    <div className="border w-full flex flex-col hover:scale-110 duration-300 items-center rounded-3xl p-6  shadow-lg"
+                    <div data-aos="flip-up" className="border w-full flex flex-col hover:scale-110 duration-300 items-center rounded-3xl p-6  shadow-lg"
                         key={user._id}
                     >
                         <div className=" h-52">

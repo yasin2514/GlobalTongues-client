@@ -1,8 +1,10 @@
+import PageTitle from "../../../Components/PageTitle/PageTitle";
 import useEnrolledClass from "../../../Hooks/useEnrolledClass";
 const EnrolledClasses = () => {
     const [classes] = useEnrolledClass();
     return (
         <div className="w-full">
+             <PageTitle title="Enrolled Class" />
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     {/* head */}

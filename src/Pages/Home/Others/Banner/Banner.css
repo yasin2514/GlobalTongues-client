@@ -14,21 +14,21 @@
   
   .number-slide1 {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.50)),url('../../../../assets/banner-3.jpg');
-    width: 100%;
-    background-size:cover;
+    /* width: 100%;
+    background-size:cover; */
    
   }
   
   .number-slide2 {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.50)),url('../../../../assets/banner-4.jpg');
-    width: 100%;
-    background-size:cover;
+    /* width: 100%;
+    background-size:cover; */
   }
   
   .number-slide3 {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.60)),url('../../../../assets/banner-5.jpg');
-    width: 100%;
-    background-size:cover;
+    /* width: 100%;
+    background-size:cover; */
   }
   
  

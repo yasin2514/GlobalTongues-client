@@ -5,6 +5,7 @@ import useAdmin from '../Hooks/useAdmin'
 import useInstructor from '../Hooks/useInstructor'
 import useCart from '../Hooks/useCart';
 import useStudent from '../Hooks/useStudent';
+import { FaHome,FaUsersCog,FaElementor,FaEdit,FaCartArrowDown,FaCartPlus,FaMoneyCheckAlt } from "react-icons/fa";
 const DashboardLayout = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
@@ -28,27 +29,27 @@ const DashboardLayout = () => {
 
                         {/* admin */}
                         {isAdmin && <>
-                            <li className='hover:text-orange-600'><NavLink to={'/dashboard/admin'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
-                                Admin Home</NavLink></li>
-                            <li className='hover:text-orange-600'><NavLink to={'/dashboard/manageUsers'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Manage Users</NavLink></li>
-                            <li className='hover:text-orange-600'><NavLink to={'/dashboard/manageClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Manage Classes</NavLink></li>
+                            <li className='hover:text-orange-600'> <NavLink to={'/dashboard/admin'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
+                               <FaHome></FaHome> Admin Home</NavLink></li>
+                            <li className='hover:text-orange-600'><NavLink to={'/dashboard/manageUsers'} className={({ isActive }) => isActive ? "text-orange-600" : ""}><FaUsersCog></FaUsersCog> Manage Users</NavLink></li>
+                            <li className='hover:text-orange-600'><NavLink to={'/dashboard/manageClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}><FaEdit></FaEdit> Manage Classes</NavLink></li>
                         </>
                             || isInstructor && <>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
-                                    Instructor Home</NavLink></li>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructorClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>My Classes</NavLink></li>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/addClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Add a Classes</NavLink></li>
+                                <li className='hover:text-orange-600'> <NavLink to={'/dashboard/instructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
+                                   <FaHome></FaHome> Instructor Home</NavLink></li>
+                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/instructorClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}><FaElementor></FaElementor> My Classes</NavLink></li>
+                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/addClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}><FaEdit></FaEdit> Add a Classes</NavLink></li>
                             </>
 
                             || isStudent && <>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
-                                    Student Home
+                                <li className='hover:text-orange-600'> <NavLink to={'/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>
+                                   <FaHome></FaHome> Student Home
                                 </NavLink></li>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/myClassStudent'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>My Classes
+                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/myClassStudent'} className={({ isActive }) => isActive ? "text-orange-600" : ""}><FaCartPlus></FaCartPlus>My Classes
                                     <span className="badge badge-secondary absolute left-32">+{classes?.length || 0}</span>
                                 </NavLink></li>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/enrolledClass'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>My Enrolled Classes</NavLink></li>
-                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/paymentHistory'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Payment History</NavLink></li>
+                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/enrolledClass'} className={({ isActive }) => isActive ? "text-orange-600" : ""}><FaCartArrowDown></FaCartArrowDown> My Enrolled Classes</NavLink></li>
+                                <li className='hover:text-orange-600'><NavLink to={'/dashboard/paymentHistory'} className={({ isActive }) => isActive ? "text-orange-600" : ""}><FaMoneyCheckAlt></FaMoneyCheckAlt>Payment History</NavLink></li>
                             </>}
                     </ul>
 

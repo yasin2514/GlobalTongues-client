@@ -6,13 +6,19 @@ import img3 from '../../../../assets/demo3.jpg'
 import moment from 'moment/moment';
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { TfiLocationPin } from "react-icons/tfi";
+import { useEffect } from 'react';
+import AOS from 'aos';
+
 const FreeEvents = () => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
-        <div className=' py-20 flex items-center justify-center'>
+        <div className=' py-20 bg-red-50 flex items-center justify-center'>
             <div className=' w-1/2 '>
                 <SectionTItle heading="On Going Event Free Classes" subHeading="Join class today">
                 </SectionTItle>
-                <div className='mx-20 my-10 '>
+                <div className='mx-20 my-10 '  data-aos="zoom-in-up" data-aos-duration="1000">
                     <p className='text-xl'>We are an open and friendly swimming school. Each of our little floats is special and unique to us. We know each of our students not only by name, but most of all we listen to them and try to get to know them well. We teach swimming, but also try to pass on moral principles and values.</p>
                     <div className='mt-10 flex gap-24'>
                         <ul className='space-y-2'>
