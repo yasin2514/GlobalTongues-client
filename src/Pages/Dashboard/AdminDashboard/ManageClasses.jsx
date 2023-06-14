@@ -66,11 +66,11 @@ const ManageClasses = () => {
             })
     }
     return (
-        <div className="w-full">
+        <div className="w-full border-3">
             <PageTitle title="Manage Classes" />
 
             <div className="overflow-x-auto">
-                <table className="table w-full text-center">
+                <table className="table text-center table-auto">
                     {/* head */}
                     <thead>
                         <tr className="text-[14px] text-blue-600">

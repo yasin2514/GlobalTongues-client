@@ -33,7 +33,7 @@ const UserProfile = () => {
                     </div>
                 </div>
                 </motion.button>
-                <div className="text-center mt-10">
+                <div className="text-center my-10">
                     {isAdmin && <h2 className="text-5xl font-bold">Admin</h2>}
                     {isStudent && <h2 className="text-5xl font-bold">Student</h2>}
                     {isInstructor && <h2 className="text-5xl font-bold">Instructor</h2>}
