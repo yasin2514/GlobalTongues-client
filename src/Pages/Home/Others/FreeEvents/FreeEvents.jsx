@@ -45,7 +45,7 @@ const FreeEvents = () => {
                     </div>
                 </div>
             </div>
-            <div className='relative w-full h-[70vh] md:h-full md:w-1/2' data-aos="zoom-in-up" data-aos-duration="1000">
+            <div className='relative w-full h-[70vh] md:h-full md:w-1/2' data-aos="zoom-in-up">
                 <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
                     {/* cart-1 */}
                     <div className=' w-full overflow-hidden bg-white'>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo-3.png'
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 const Footer = () => {
@@ -16,10 +17,12 @@ const Footer = () => {
                 <div className='grid mt-6 lg:mt-0 lg:place-content-start grid-cols-2 lg:grid-cols-4 gap-10  '>
                     <div className='flex flex-col gap-1'>
                         <h4 className="text-White text-[1.4rem] font-medium">Company</h4>
-                        <a className="link link-hover">About us</a>
-                        <a className="link link-hover">Courses</a>
-                        <a className="link link-hover">Best for Learn</a>
-                        <a className="link link-hover">Word wide Service</a>
+                        <Link to={"/"} className="link link-hover">Home</Link>
+                        <Link to={"/allInstructor"} className="link link-hover">Instructors</Link>
+                        <Link to={"/allClasses"} className="link link-hover">Classes</Link>
+                        <Link to={"/login"} className="link link-hover">SignIn</Link>
+                        <Link to={"/register"} className="link link-hover">SignUp</Link>
+
                     </div>
                     <div className='flex flex-col gap-1'>
                         <h4 className="text-White text-[1.4rem] font-medium">Services</h4>

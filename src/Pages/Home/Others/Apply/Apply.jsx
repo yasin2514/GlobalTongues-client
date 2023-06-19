@@ -16,7 +16,7 @@ const Apply = () => {
                 </SectionTItle>
                 <div className="mt-10 space-y-10">
                     {/* option */}
-                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaDiscourse className="text-5xl text-white"></FaDiscourse>
                         </div>
@@ -26,7 +26,7 @@ const Apply = () => {
                         </div>
                     </div>
                     {/* option */}
-                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaLuggageCart className="text-5xl text-white"></FaLuggageCart>
                         </div>
@@ -36,7 +36,7 @@ const Apply = () => {
                         </div>
                     </div>
                     {/* option */}
-                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaMoneyCheckAlt className="text-5xl text-white"></FaMoneyCheckAlt>
                         </div>
@@ -46,7 +46,7 @@ const Apply = () => {
                         </div>
                     </div>
                     {/* option */}
-                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaUserPlus className="text-5xl text-white"></FaUserPlus>
                         </div>
@@ -59,7 +59,7 @@ const Apply = () => {
 
             </div>
 
-            <div data-aos="zoom-in-down" data-aos-duration="1000">
+            <div data-aos="zoom-in-down">
                 <img src={img} alt="" />
             </div>
 
