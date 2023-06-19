@@ -4,6 +4,7 @@ import FreeEvents from "../Others/FreeEvents/FreeEvents";
 import LevelUp from "../Others/Levelup/LevelUp";
 import PopularClass from "../Others/PopularClass/PopularClass";
 import PopularInstructor from "../Others/PopularInstrctor/PopularInstructor";
+import Subscribe from "../Others/Subscribe/subscribe";
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <LevelUp></LevelUp>
             <PopularInstructor></PopularInstructor>
             <FreeEvents></FreeEvents>
+            <Subscribe></Subscribe>
         </div>
     );
 };
