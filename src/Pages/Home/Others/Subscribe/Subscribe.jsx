@@ -7,7 +7,7 @@ const Subscribe = () => {
         AOS.init();
     }, [])
     return (
-        <div className="bg-red-50 py-20">
+        <div className="bg-[#FFFAF3] py-20">
             <SectionTItle heading="Subscribe to Our Newsletter" subHeading="GO AT YOUR OWN PACE">
             </SectionTItle>
             <p className="text-center mt-5" data-aos="zoom-in-down">Global Tongues: Dhaka's language school for global communication. Learn foreign languages <br /> with expert instructors and expand your horizons."</p>

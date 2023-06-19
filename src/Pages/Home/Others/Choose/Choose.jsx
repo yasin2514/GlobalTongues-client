@@ -10,7 +10,7 @@ const Choose = () => {
         AOS.init();
     }, [])
     return (
-        <div className="grid md:grid-cols-2 items-center bg-red-50 gap-20 px-5 md:px-20">
+        <div className="grid md:grid-cols-2 items-center bg-[#FFFAF3]  gap-20 px-5 md:px-20">
             <div data-aos="zoom-in-down" >
                 <img src={img} alt="" />
             </div>
