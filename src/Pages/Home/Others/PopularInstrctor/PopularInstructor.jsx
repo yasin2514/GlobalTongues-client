@@ -16,7 +16,7 @@ const PopularInstructor = () => {
         return res.data;
     })
     return (
-        <div className="w-full px-5 md:px-20">
+        <div className="w-full px-5 md:px-20 my-24">
             <SectionTItle heading={'Meet Our Top Class Instructor'} subHeading={'World top Class'}>
             </SectionTItle>
             <Marquee speed={150}>

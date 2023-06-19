@@ -3,7 +3,7 @@ import { FaDiscourse,FaLuggageCart,FaMoneyCheckAlt,FaUserPlus } from "react-icon
 import img from "../../../../assets/apply.png"
 const Apply = () => {
     return (
-        <div className="grid md:grid-cols-2 gap-20 px-20">
+        <div className="grid md:grid-cols-2 gap-20 my-24 px-20">
             <div>
                 <SectionTItle heading="How to Apply?" subHeading="INFORMATION">
                 </SectionTItle>

@@ -4,7 +4,7 @@ import img from "../../../../assets/choose.png"
 import {FaChalkboardTeacher,FaBusinessTime,FaBook,FaBoxes  } from "react-icons/fa";
 const Choose = () => {
     return (
-        <div className="grid md:grid-cols-2 items-center bg-blue-50 gap-20 px-20">
+        <div className="grid md:grid-cols-2 items-center bg-red-50 gap-20 px-20">
             <div className="">
                 <img src={img} alt="" />
             </div>

@@ -65,7 +65,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="z-20 py-6 navbar sticky top-0 bg-black text-white">
+        <div className="z-20 py-6 navbar fixed top-0 bg-black text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

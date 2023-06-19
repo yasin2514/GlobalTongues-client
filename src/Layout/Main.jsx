@@ -5,7 +5,9 @@ import Footer from "../Pages/Shared/Footer/Footer";
 const Main = () => {
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar></Navbar>
+            <div className="mb-20">
+                <Navbar></Navbar>
+            </div>
             <Outlet></Outlet>
             <div className="mt-auto">
                 <Footer></Footer>

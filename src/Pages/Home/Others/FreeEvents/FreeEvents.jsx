@@ -59,7 +59,7 @@ const FreeEvents = () => {
                                 </div>
                                 <p className='text-sm  '><TfiLocationPin className='inline text-blue-600 mr-2 text-xl'></TfiLocationPin>North Caroline United States</p>
                             </div>
-                            <h2 className='text-black text-2xl my-5 font-bold'>How to Speak Fluently in English:
+                            <h2 className='text-black text-2xl  mt-5 mb-10  font-bold'>How to Speak Fluently in English:
                                 Introduction to Simple Way to Speak.</h2>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ const FreeEvents = () => {
                                 </div>
                                 <p className='text-sm  '><TfiLocationPin className='inline text-blue-600 mr-2 text-xl'></TfiLocationPin>Mirpur Dhaka Bangladesh</p>
                             </div>
-                            <h2 className='text-black text-2xl my-5 font-bold'>How to Speak Fluently in Bengali:
+                            <h2 className='text-black text-2xl  mt-5 mb-10  font-bold'>How to Speak Fluently in Bengali:
                                 Introduction to Simple Way to Speak.</h2>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ const FreeEvents = () => {
                                 </div>
                                 <p className='text-sm  '><TfiLocationPin className='inline text-blue-600 mr-2 text-xl'></TfiLocationPin>West island states</p>
                             </div>
-                            <h2 className='text-black text-2xl my-5 font-bold'>How to Speak Fluently in Chinese:
+                            <h2 className='text-black text-2xl mt-5 mb-10 font-bold'>How to Speak Fluently in Chinese:
                                 Introduction to Simple Way to Speak.</h2>
                         </div>
                     </div>
