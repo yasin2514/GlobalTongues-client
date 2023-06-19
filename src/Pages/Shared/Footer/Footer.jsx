@@ -20,8 +20,8 @@ const Footer = () => {
                         <Link to={"/"} className="link link-hover">Home</Link>
                         <Link to={"/allInstructor"} className="link link-hover">Instructors</Link>
                         <Link to={"/allClasses"} className="link link-hover">Classes</Link>
+                        <Link to={"/contactUs"} className="link link-hover">Contact Us</Link>
                         <Link to={"/login"} className="link link-hover">SignIn</Link>
-                        <Link to={"/register"} className="link link-hover">SignUp</Link>
 
                     </div>
                     <div className='flex flex-col gap-1'>

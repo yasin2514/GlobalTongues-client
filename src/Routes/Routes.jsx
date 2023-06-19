@@ -24,6 +24,7 @@ import InstructorRoute from "./InstructorRoute";
 import StudentRoute from "./StudentRoute";
 import Payment from "../Pages/Dashboard/StudentDashboard/Payment/Payment";
 import UpdateClass from "../Pages/Dashboard/InstructorDashboard/UpdateClass";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             {
                 path: '/allClasses',
                 element: <Classes></Classes>
+            },
+            {
+                path: '/contactUs',
+                element: <ContactUs></ContactUs>
             },
         ],
         errorElement: <Error></Error>

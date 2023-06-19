@@ -55,6 +55,7 @@ const Navbar = () => {
         <li className='hover:text-orange-600'><NavLink to={'/'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Home</NavLink></li>
         <li className='hover:text-orange-600'><NavLink to={'/allInstructor'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Instructors</NavLink></li>
         <li className='hover:text-orange-600'><NavLink to={'/allClasses'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Classes</NavLink></li>
+        <li className='hover:text-orange-600'><NavLink to={'/contactUs'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>ContactUs</NavLink></li>
         {
             user && <>
                 <li className='hover:text-orange-600'><NavLink to={isAdmin && '/dashboard/admin' || isInstructor && '/dashboard/instructor' || isStudent && '/dashboard/student'} className={({ isActive }) => isActive ? "text-orange-600" : ""}>Dashboard </NavLink></li>
