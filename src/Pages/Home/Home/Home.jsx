@@ -1,5 +1,7 @@
 import PageTitle from "../../../Components/PageTitle/PageTitle";
+import Apply from "../Others/Apply/Apply";
 import Banner from "../Others/Banner/Banner";
+import Choose from "../Others/Choose/Choose";
 import FreeEvents from "../Others/FreeEvents/FreeEvents";
 import LevelUp from "../Others/Levelup/LevelUp";
 import PopularClass from "../Others/PopularClass/PopularClass";
@@ -14,6 +16,8 @@ const Home = () => {
             <PopularClass></PopularClass>
             <LevelUp></LevelUp>
             <PopularInstructor></PopularInstructor>
+            <Choose></Choose>
+            <Apply></Apply>
             <FreeEvents></FreeEvents>
             <Subscribe></Subscribe>
         </div>

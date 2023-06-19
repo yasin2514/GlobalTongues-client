@@ -14,7 +14,7 @@ const FreeEvents = () => {
         AOS.init();
     }, [])
     return (
-        <div className=' py-20 bg-red-50 md:flex items-center justify-center'>
+        <div className=' py-20 bg-blue-50 md:flex items-center justify-center'>
             <div className='w-full md:w-1/2 '>
                 <SectionTItle heading="On Going Event Free Classes" subHeading="Join class today">
                 </SectionTItle>
