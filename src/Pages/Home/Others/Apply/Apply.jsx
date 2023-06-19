@@ -10,7 +10,7 @@ const Apply = () => {
     }, [])
 
     return (
-        <div className="grid md:grid-cols-2 gap-20 my-24 px-20">
+        <div className="grid md:grid-cols-2 gap-20 my-24 px-5 md:px-20">
             <div>
                 <SectionTItle heading="How to Apply?" subHeading="INFORMATION">
                 </SectionTItle>
@@ -18,7 +18,7 @@ const Apply = () => {
                     {/* option */}
                     <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
-                            <FaDiscourse className="text-5xl text-white"></FaDiscourse>
+                            <FaDiscourse className="text-3xl md:text-5xl text-white"></FaDiscourse>
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold mb-2">Select Suitable Course</h3>
@@ -28,7 +28,7 @@ const Apply = () => {
                     {/* option */}
                     <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
-                            <FaLuggageCart className="text-5xl text-white"></FaLuggageCart>
+                            <FaLuggageCart className="text-3xl md:text-5xl text-white"></FaLuggageCart>
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold mb-2">Student Information</h3>
@@ -38,7 +38,7 @@ const Apply = () => {
                     {/* option */}
                     <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
-                            <FaMoneyCheckAlt className="text-5xl text-white"></FaMoneyCheckAlt>
+                            <FaMoneyCheckAlt className="text-3xl md:text-5xl text-white"></FaMoneyCheckAlt>
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold mb-2">Payment Information</h3>
@@ -48,7 +48,7 @@ const Apply = () => {
                     {/* option */}
                     <div className="flex items-center gap-7" data-aos="zoom-in-down" >
                         <div className="bg-[#EC615B] p-5 rounded-full">
-                            <FaUserPlus className="text-5xl text-white"></FaUserPlus>
+                            <FaUserPlus className="text-3xl md:text-5xl text-white"></FaUserPlus>
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold mb-2">Register Now</h3>

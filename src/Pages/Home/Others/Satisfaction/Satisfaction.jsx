@@ -3,7 +3,7 @@ const Satisfaction = () => {
     return (
         <div className="satisfaction-bg bg-fixed h-[80vh] flex items-center justify-center px-20">
 
-            <div className='grid md:grid-cols-4 items-center w-full rounded-lg py-10 text-white bg-black bg-opacity-80'>
+            <div className='grid grid-cols-1 gap-10 md:grid-cols-4 items-center w-full rounded-lg py-10 text-white bg-black bg-opacity-80'>
                 <div className='text-center space-y-5 '>
                     <CountUp className='text-5xl font-bold text-red-600' end={1200} duration={2.75} />
                     <h4 className='text-xl font-bold'>FINISHED SESSIONS</h4>
