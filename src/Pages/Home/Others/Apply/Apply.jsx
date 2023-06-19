@@ -1,7 +1,14 @@
 import SectionTItle from "../../../../Components/sectionTitle/SectionTItle";
-import { FaDiscourse,FaLuggageCart,FaMoneyCheckAlt,FaUserPlus } from "react-icons/fa";
+import { FaDiscourse, FaLuggageCart, FaMoneyCheckAlt, FaUserPlus } from "react-icons/fa";
 import img from "../../../../assets/apply.png"
+import { useEffect } from "react";
+import AOS from 'aos';
+
 const Apply = () => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
         <div className="grid md:grid-cols-2 gap-20 my-24 px-20">
             <div>
@@ -9,7 +16,7 @@ const Apply = () => {
                 </SectionTItle>
                 <div className="mt-10 space-y-10">
                     {/* option */}
-                    <div className="flex items-center gap-7">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaDiscourse className="text-5xl text-white"></FaDiscourse>
                         </div>
@@ -19,7 +26,7 @@ const Apply = () => {
                         </div>
                     </div>
                     {/* option */}
-                    <div className="flex items-center gap-7">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaLuggageCart className="text-5xl text-white"></FaLuggageCart>
                         </div>
@@ -29,7 +36,7 @@ const Apply = () => {
                         </div>
                     </div>
                     {/* option */}
-                    <div className="flex items-center gap-7">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaMoneyCheckAlt className="text-5xl text-white"></FaMoneyCheckAlt>
                         </div>
@@ -39,7 +46,7 @@ const Apply = () => {
                         </div>
                     </div>
                     {/* option */}
-                    <div className="flex items-center gap-7">
+                    <div className="flex items-center gap-7" data-aos="zoom-in-down" data-aos-duration="1000">
                         <div className="bg-[#EC615B] p-5 rounded-full">
                             <FaUserPlus className="text-5xl text-white"></FaUserPlus>
                         </div>
@@ -52,7 +59,7 @@ const Apply = () => {
 
             </div>
 
-            <div>
+            <div data-aos="zoom-in-down" data-aos-duration="1000">
                 <img src={img} alt="" />
             </div>
 

@@ -19,15 +19,15 @@ const LevelUp = () => {
                     <p className="mt-5 pb-5">The limits of my language mean the limits of my world.One language sets you in a corridor for life.Language is the road map of a culture. </p>
                 </div>
             </div>
-            <div className="w-full md:w-1/2 flex-shrink-0 space-y-12 mb-20" data-aos="zoom-in-down" data-aos-duration="1000">
+            <div className="w-full md:w-1/2 flex-shrink-0 space-y-12 mb-20" >
                 <SectionTItle heading="Level Up you language Skills" subHeading="Enrolled our class">
                 </SectionTItle>
                 <div data-aos="zoom-in-down" data-aos-duration="1000" className="space-y-10">
                     <p className="text-xl font-semibold">Every square inch of our unique facility is designed to improve learning, fun and safety for every child and parent who joins the global tongues Academy family.
                     </p>
-                    <p className="">You feel it the moment you walk in. Something else. It's more than just vivid colors that inspire kids. More than a curriculum designed not only to teach children to language, but also to build their character through guided play. More than a thrill-free language pool. There is more. Something unexpected. Something that drives Swim Academy school beyond the usual.</p>
+                    <p className="" data-aos="zoom-in-down" data-aos-duration="1000" >You feel it the moment you walk in. Something else. It's more than just vivid colors that inspire kids. More than a curriculum designed not only to teach children to language, but also to build their character through guided play. More than a thrill-free language pool. There is more. Something unexpected. Something that drives Swim Academy school beyond the usual.</p>
 
-                    <button className="btn btn-primary">Learn More</button>
+                    <button className="btn btn-primary" data-aos="fade-up">Learn More</button>
                 </div>
             </div>
         </div>
