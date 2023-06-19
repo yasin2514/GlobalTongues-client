@@ -16,7 +16,7 @@ const DashboardLayout = () => {
     return (
         <>
             <Navbar></Navbar>
-            <div className="drawer lg:drawer-open">
+            <div className="drawer lg:drawer-open mt-20">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col w-full items-center md:block md:py-10 md:px-5 ">
                     {/* Page content here */}
