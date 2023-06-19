@@ -8,7 +8,7 @@ import Subscribe from "../Others/Subscribe/subscribe";
 
 const Home = () => {
     return (
-        <div className="space-y-24">
+        <div className="space-y-24 overflow-hidden">
             <PageTitle title={'Home'}></PageTitle>
             <Banner></Banner>
             <PopularClass></PopularClass>
