@@ -23,7 +23,7 @@ const PopularInstructor = () => {
                 <div className="flex my-20">
                     {instructor?.slice(0, 6).map(user => (
                         <div
-                         className="w-80 mx-10 flex flex-col items-center rounded-3xl p-6  shadow-lg"
+                         className="w-80 mx-10 flex flex-col hover:!scale-110 duration-200 items-center rounded-3xl p-6  shadow-lg"
                             key={user._id}
                             data-aos="zoom-in"
                         >

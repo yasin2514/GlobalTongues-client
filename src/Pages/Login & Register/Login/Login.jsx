@@ -94,7 +94,7 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen  w-full bg-gray-100 py-10">
+        <div className="hero min-h-screen  w-full py-10">
             <PageTitle title={'SignIn'}></PageTitle>
             <div className="md:hero-content items-center justify-center lg:flex-row">
                 <div className="w-full lg:w-1/2">
@@ -104,7 +104,7 @@ const Login = () => {
                         loop={true} />
                 </div>
 
-                <div className="card w-full lg:w-1/2 py-10   bg-white">
+                <div className="card w-full lg:w-1/2 py-10 shadow-lg border-2">
                     <h1 className="text-3xl ms-10 text-center font-bold text-blue-600">SignIn</h1>
                     <p className="ms-10 text-center text-green-900 text-sm">Let's go fill Up the form and enjoy our service,HurryUp!</p>
 

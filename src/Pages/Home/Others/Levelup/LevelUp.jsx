@@ -9,7 +9,7 @@ const LevelUp = () => {
         AOS.init();
     }, [])
     return (
-        <div className="md:flex items-center gap-32 py-20 px-5 md:px-20 bg-blue-50">
+        <div className="md:flex items-center gap-32 py-20 px-5 md:px-20 bg-blue-50 dark:bg-body">
             <div className="w-full md:1/2 relative mb-20" data-aos="flip-left" data-aos-duration="1000">
                 <div className="w-11/12 hidden md:block">
                     <img src={img2} alt="" className="w-full" />

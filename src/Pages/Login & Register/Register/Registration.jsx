@@ -56,7 +56,7 @@ const Registration = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-gray-100 py-10">
+        <div className="hero min-h-screen py-10">
             <PageTitle title={'Registration'}></PageTitle>
             <div className="hero-content w-full flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2">
@@ -67,7 +67,7 @@ const Registration = () => {
 
                 </div>
 
-                <div className="card w-full lg:w-1/2 py-10 shadow-xl bg-white">
+                <div className="card w-full lg:w-1/2 py-10 shadow-lg border-2">
                     <h1 className="text-3xl  ms-10 font-bold text-blue-600">Create Account</h1>
                     <p className="ms-10  text-green-900 text-sm">Let's go fill Up the form and enjoy our service,HurryUp!</p>
                     {/* form start */}
